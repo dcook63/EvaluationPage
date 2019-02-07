@@ -9,7 +9,7 @@ namespace MockupGUI
 {
     public partial class SiteMaster : MasterPage
     {
-        protected void Login_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
 
         }

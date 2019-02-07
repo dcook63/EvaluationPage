@@ -7,9 +7,9 @@ using System.Web.UI.WebControls;
 
 namespace MockupGUI
 {
-    public partial class SiteMaster : MasterPage
+    public partial class LandingPage : System.Web.UI.Page
     {
-        protected void Login_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
 
         }
