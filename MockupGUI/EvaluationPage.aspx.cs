@@ -11,6 +11,8 @@ namespace MockupGUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            evalQ1.SelectedIndex = 2;
+            evalQ2.SelectedIndex = 2;
 
         }
     }
