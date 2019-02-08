@@ -38,13 +38,13 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="container body-content">
+        <div class="container-fluid body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
                 <p>&copy; <%: DateTime.Now.Year %> - Mockup GUI</p>
-                <img src="~/ksuowls.jpg" runat="server" height="30"></>
+                <img padding-left="10px" src="~/ksuowls.jpg" runat="server" height="30"></>
             </footer>
         </div>
 

@@ -1,10 +1,10 @@
-﻿<%@ Page Title="Login Page" Language="C#" MasterPageFile="~/Login.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="MockupGUI._Default" %>
+﻿<%@ Page Title="Login Page" Language="C#" MasterPageFile="~/Login.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="MockupGUI._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     
     <div>
-        <h1>KSU IT Capstone Evaluation Webpage</h1>
+        <h1>Login To Continue</h1>
     </div>
     <br />
     <br />
