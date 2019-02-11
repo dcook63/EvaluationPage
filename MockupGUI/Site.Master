@@ -42,10 +42,6 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Mockup GUI</p>
-                <img padding-left="10px" src="~/ksuowls.jpg" runat="server" height="30"></>
-            </footer>
         </div>
 
     </form>

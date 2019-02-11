@@ -2,51 +2,47 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <style>
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #333;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding-left: 20px;
-            padding-right:30px;
-        }
-        li {
-            float: left;
-        }
-        li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 10px 20px;
-            text-decoration: none;
-        }
-        li a:hover {
-            background-color: #111;
-        }
-        .active {
-            background-color: #ffd800
-        }
-        .margin {
-            margin: 30px;
-        }
-    </style>
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/nav.css" rel="stylesheet" type="text/css">
 
-    <div>
-        <ul>
-            <li><a href="LandingPage.aspx">Home</a></li>
-            <li class="active"><a href="EvaluationPage.aspx">Evaluation Form</a></li>
-            <li><a href="EvaluationPage.aspx">Other Form</a></li>
-            <li><a href="EvaluationPage.aspx">Test Page</a></li>
-            <li style="float:right"><a href="Login.aspx">Logout</a></li>
-        </ul>
-    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/nav.js"></script>
 
-    <div class="margin">
+    <!-- Nav -->
+    <section class="navigation">
+        <div class="nav-container">
+            <div class="brand">
+                <img src="images/ksu_logo.png" id="logo" />
+            </div>
+            <nav>
+                <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+                <ul class="nav-list">
+                    <li><a href="#!" id="nav-home">Group 5</a></li>
+                    <li><a href="#!">Group 6</a></li>
+                    <li><a href="#!">Group 7</a></li>
+                    <li>
+                        <a href="#!">Group 8</a>
+                        <ul class="nav-dropdown">
+                            <li><a href="#!">Sponsor Evaluation</a></li>
+                            <li><a href="#!">Student Evaluation</a></li>
+                            <li><a href="EvaluationPage.aspx">Professor Evaluation</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Header -->
+    <section class="header">
+    <h1 id="cms">Capstone Management System</h1>
+    <br />
+    <h3 id="page">Professor Review</h3>
+  </section>
+    <!-- Main -->
+    <section class="main">
+    <div class="margin" style="text-align: center;">
         <br />
         <asp:Table runat="server">
             <asp:TableRow>
@@ -102,13 +98,19 @@
 
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Button runat="server" Text="Submit"/>
+                    <button>Submit</button> 
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:Button runat="server" Text="Add Team Member"/>
+                    <button>Add Team Member</button> 
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
         <br />
     </div>
+    </section>
+
+    <!-- Footer -->
+  <section class="footer">
+    <p>© Copyright 2019. All Rights Reserved.</p>
+  </section>
 </asp:Content>
