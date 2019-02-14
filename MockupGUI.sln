@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockupGUI", "MockupGUI\MockupGUI.csproj", "{D6E6EAA4-B0E3-4072-ABF3-9512A03CFEE9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvaluationPage", "MockupGUI\EvaluationPage.csproj", "{D6E6EAA4-B0E3-4072-ABF3-9512A03CFEE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
