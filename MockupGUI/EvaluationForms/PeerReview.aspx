@@ -75,7 +75,7 @@
             <asp:TableRow Height="15px"></asp:TableRow>
             <asp:TableRow height="75px">
                 <asp:TableCell Width="100%" height="75px">
-                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine"></asp:textbox>
+                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="commentBox1"></asp:textbox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow Height="25"></asp:TableRow>
@@ -99,7 +99,7 @@
             <asp:TableRow Height="15px"></asp:TableRow>
             <asp:TableRow height="75px">
                 <asp:TableCell Width="100%" height="75px">
-                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine"></asp:textbox>
+                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="commentBox2"></asp:textbox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow Height="25"></asp:TableRow>
@@ -123,7 +123,7 @@
             <asp:TableRow Height="15px"></asp:TableRow>
             <asp:TableRow height="75px">
                 <asp:TableCell Width="100%" height="75px">
-                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine"></asp:textbox>
+                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="commentBox3"></asp:textbox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow Height="25"></asp:TableRow>
@@ -147,7 +147,31 @@
             <asp:TableRow Height="15px"></asp:TableRow>
             <asp:TableRow height="75px">
                 <asp:TableCell Width="100%" height="75px">
-                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine"></asp:textbox>
+                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="commentBox4"></asp:textbox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow Height="25"></asp:TableRow>
+
+            <%-- General Involvement Section --%>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label runat="server" Text="Rate your team members overall performance on the project"></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell></asp:TableCell>
+                <asp:TableCell>
+                    <asp:dropdownlist runat="server" id="evalQ5">
+                        <asp:ListItem Text="1 - Very Poor"></asp:ListItem>
+                        <asp:ListItem Text="2 - Poor"></asp:ListItem>
+                        <asp:ListItem Text="3 - OK"></asp:ListItem>
+                        <asp:ListItem Text="4 - Very Good"></asp:ListItem>
+                        <asp:ListItem Text="5 - Excellent"></asp:ListItem>
+                    </asp:dropdownlist>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow Height="15px"></asp:TableRow>
+            <asp:TableRow height="75px">
+                <asp:TableCell Width="100%" height="75px">
+                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="commentBox5"></asp:textbox>
                 </asp:TableCell>
             </asp:TableRow>
 
@@ -155,7 +179,7 @@
             <asp:TableRow Height="30"></asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <button>Submit</button> 
+                    <button runat="server" onServerClick="submitForm" type="button">Submit</button> 
                 </asp:TableCell>
                 <asp:TableCell>
                     <button>Add Team Member</button> 
