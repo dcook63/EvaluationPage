@@ -7,13 +7,14 @@ using System.Web.UI.WebControls;
 
 namespace MockupGUI
 {
-    public partial class EvaluationPage : System.Web.UI.Page
+    public partial class PeerReview : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             evalQ1.SelectedIndex = 2;
             evalQ2.SelectedIndex = 2;
-
+            evalQ3.SelectedIndex = 2;
+            evalQ4.SelectedIndex = 2;
         }
     }
 }

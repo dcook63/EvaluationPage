@@ -10,7 +10,7 @@
 namespace MockupGUI {
     
     
-    public partial class EvaluationPage {
+    public partial class PeerReview {
         
         /// <summary>
         /// evalQ1 control.
@@ -29,5 +29,23 @@ namespace MockupGUI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList evalQ2;
+        
+        /// <summary>
+        /// evalQ3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList evalQ3;
+        
+        /// <summary>
+        /// evalQ4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList evalQ4;
     }
 }

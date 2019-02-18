@@ -116,7 +116,8 @@
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="EvaluationPage.aspx" />
+    <Content Include="EvaluationForms\SponsorReview.aspx" />
+    <Content Include="EvaluationForms\PeerReview.aspx" />
     <Content Include="index.html" />
     <Content Include="images\ksuowls.jpg" />
     <Content Include="icon.png" />
@@ -198,6 +199,13 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="EvaluationForms\SponsorReview.aspx.cs">
+      <DependentUpon>SponsorReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EvaluationForms\SponsorReview.aspx.designer.cs">
+      <DependentUpon>SponsorReview.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -205,12 +213,12 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EvaluationPage.aspx.cs">
-      <DependentUpon>EvaluationPage.aspx</DependentUpon>
+    <Compile Include="EvaluationForms\PeerReview.aspx.cs">
+      <DependentUpon>PeerReview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EvaluationPage.aspx.designer.cs">
-      <DependentUpon>EvaluationPage.aspx</DependentUpon>
+    <Compile Include="EvaluationForms\PeerReview.aspx.designer.cs">
+      <DependentUpon>PeerReview.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
