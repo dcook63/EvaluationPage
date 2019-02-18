@@ -42,7 +42,7 @@
   </section>
 
     <!-- Main -->
-    <section class="main">
+    <section class="main" style="padding:100px">
     <div class="margin" style="text-align: center;">
         <br />
         <asp:Table runat="server">
@@ -51,7 +51,7 @@
                     <asp:Label runat="server" text="Enter Group Number"></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" placeholder="Last, First"></asp:TextBox>
+                    <asp:TextBox runat="server" placeholder="Enter Here"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow Height="30"></asp:TableRow>

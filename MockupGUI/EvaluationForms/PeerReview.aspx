@@ -42,7 +42,7 @@
   </section>
 
     <!-- Main -->
-    <section class="main">
+    <section class="main" style="padding:100px">
     <div class="margin" style="text-align: center;">
         <br />
         <asp:Table runat="server">
