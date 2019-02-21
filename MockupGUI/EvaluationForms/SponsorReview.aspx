@@ -26,7 +26,7 @@
                         <ul class="nav-dropdown">
                             <li><a href="#!">Sponsor Evaluation</a></li>
                             <li><a href="PeerReview.aspx">Peer Evaluation</a></li>
-                            <li><a href="#!">Professor Evaluation</a></li>
+                            <li><a href="PresentationReview.aspx">Presentation Evaluation</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -41,175 +41,51 @@
     <h3 id="page">Sponsor Review</h3>
   </section>
 
-    <!-- Main -->
+    <!-- Main Content -->
     <section class="main" style="padding:100px">
     <div class="margin" style="text-align: center;">
         <br />
         <asp:Table runat="server">
-            <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label runat="server" text="Enter Group Number"></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:TextBox runat="server" placeholder="Enter Here"></asp:TextBox>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow Height="30"></asp:TableRow>
 
-            <%-- Clarity Section --%>
+            <%-- Table Section --%>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label runat="server" Text="Rate the groups clarity on the project"></asp:Label>
+                    <asp:Label runat="server" Text="This is a Label. Whatever you put in this will appear as plain text on the webpage"></asp:Label>
                 </asp:TableCell>
-                <asp:TableCell></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
                 <asp:TableCell>
-                    <asp:dropdownlist runat="server" id="evalQ1">
-                        <asp:ListItem Text="1 - Very Poor"></asp:ListItem>
-                        <asp:ListItem Text="2 - Poor"></asp:ListItem>
-                        <asp:ListItem Text="3 - OK"></asp:ListItem>
-                        <asp:ListItem Text="4 - Very Good"></asp:ListItem>
-                        <asp:ListItem Text="5 - Excellent"></asp:ListItem>
-                    </asp:dropdownlist>
+                    <%-- Radio Button List --%>
+                    <asp:RadioButtonList runat="server" id="question_one" RepeatDirection="Horizontal">
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
+                        <asp:ListItem>3</asp:ListItem>
+                        <asp:ListItem>4</asp:ListItem>
+                        <asp:ListItem>5</asp:ListItem>
+                        <asp:ListItem>6</asp:ListItem>
+                        <asp:ListItem>7</asp:ListItem>
+                        <asp:ListItem>8</asp:ListItem>
+                        <asp:ListItem>9</asp:ListItem>
+                        <asp:ListItem>10</asp:ListItem>
+                    </asp:RadioButtonList>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow Height="15px"></asp:TableRow>
             <asp:TableRow height="75px">
                 <asp:TableCell Width="100%" height="75px">
-                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine"></asp:textbox>
+                    <asp:TextBox runat="server" height="75px" width="100%" placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="commentBox1"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow Height="25"></asp:TableRow>
 
-            <%-- Quality Section --%>
+            <%-- It is a good idea to section off different areas to keep track of what controls what --%>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label runat="server" Text="Rate the final products quality"></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell></asp:TableCell>
-                <asp:TableCell>
-                    <asp:dropdownlist runat="server" id="evalQ2">
-                        <asp:ListItem Text="1 - Very Poor"></asp:ListItem>
-                        <asp:ListItem Text="2 - Poor"></asp:ListItem>
-                        <asp:ListItem Text="3 - OK"></asp:ListItem>
-                        <asp:ListItem Text="4 - Very Good"></asp:ListItem>
-                        <asp:ListItem Text="5 - Excellent"></asp:ListItem>
-                    </asp:dropdownlist>
+                    <button>Submit</button>
                 </asp:TableCell>
             </asp:TableRow>
-            <asp:TableRow Height="15px"></asp:TableRow>
-            <asp:TableRow height="75px">
-                <asp:TableCell Width="100%" height="75px">
-                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine"></asp:textbox>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow Height="25"></asp:TableRow>
 
-            <%-- Communication Section --%>
-            <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label runat="server" Text="Rate the groups communication skills"></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell></asp:TableCell>
-                <asp:TableCell>
-                    <asp:dropdownlist runat="server" id="evalQ3">
-                        <asp:ListItem Text="1 - Very Poor"></asp:ListItem>
-                        <asp:ListItem Text="2 - Poor"></asp:ListItem>
-                        <asp:ListItem Text="3 - OK"></asp:ListItem>
-                        <asp:ListItem Text="4 - Very Good"></asp:ListItem>
-                        <asp:ListItem Text="5 - Excellent"></asp:ListItem>
-                    </asp:dropdownlist>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow Height="15px"></asp:TableRow>
-            <asp:TableRow height="75px">
-                <asp:TableCell Width="100%" height="75px">
-                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine"></asp:textbox>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow Height="25"></asp:TableRow>
-
-            <%-- Commitment Section --%>
-            <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label runat="server" Text="Rate the groups commitment to the project"></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell></asp:TableCell>
-                <asp:TableCell>
-                    <asp:dropdownlist runat="server" id="evalQ4">
-                        <asp:ListItem Text="1 - Very Poor"></asp:ListItem>
-                        <asp:ListItem Text="2 - Poor"></asp:ListItem>
-                        <asp:ListItem Text="3 - OK"></asp:ListItem>
-                        <asp:ListItem Text="4 - Very Good"></asp:ListItem>
-                        <asp:ListItem Text="5 - Excellent"></asp:ListItem>
-                    </asp:dropdownlist>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow Height="15px"></asp:TableRow>
-            <asp:TableRow height="75px">
-                <asp:TableCell Width="100%" height="75px">
-                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine"></asp:textbox>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow Height="25"></asp:TableRow>
-
-            <%-- Management Section --%>
-            <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label runat="server" Text="Rate the groups management skills throughout the project"></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell></asp:TableCell>
-                <asp:TableCell>
-                    <asp:dropdownlist runat="server" id="Dropdownlist1">
-                        <asp:ListItem Text="1 - Very Poor"></asp:ListItem>
-                        <asp:ListItem Text="2 - Poor"></asp:ListItem>
-                        <asp:ListItem Text="3 - OK"></asp:ListItem>
-                        <asp:ListItem Text="4 - Very Good"></asp:ListItem>
-                        <asp:ListItem Text="5 - Excellent"></asp:ListItem>
-                    </asp:dropdownlist>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow Height="15px"></asp:TableRow>
-            <asp:TableRow height="75px">
-                <asp:TableCell Width="100%" height="75px">
-                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine"></asp:textbox>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow Height="25"></asp:TableRow>
-
-            <%-- Overall Section --%>
-            <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label runat="server" Text="Rate the overall project experience"></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell></asp:TableCell>
-                <asp:TableCell>
-                    <asp:dropdownlist runat="server" id="Dropdownlist2">
-                        <asp:ListItem Text="1 - Very Poor"></asp:ListItem>
-                        <asp:ListItem Text="2 - Poor"></asp:ListItem>
-                        <asp:ListItem Text="3 - OK"></asp:ListItem>
-                        <asp:ListItem Text="4 - Very Good"></asp:ListItem>
-                        <asp:ListItem Text="5 - Excellent"></asp:ListItem>
-                    </asp:dropdownlist>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow Height="15px"></asp:TableRow>
-            <asp:TableRow height="75px">
-                <asp:TableCell Width="100%" height="75px">
-                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine"></asp:textbox>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow Height="25"></asp:TableRow>
-
-            <%-- Submission --%>
-            <asp:TableRow Height="30"></asp:TableRow>
-            <asp:TableRow>
-                <asp:TableCell>
-                    <button>Submit</button> 
-                </asp:TableCell>
-                <asp:TableCell>
-                    <button>Add Team Member</button> 
-                </asp:TableCell>
-            </asp:TableRow>
+            <%-- End of table --%>
         </asp:Table>
         <br />
     </div>

@@ -121,6 +121,7 @@
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="EvaluationForms\PresentationReview.aspx" />
     <Content Include="EvaluationForms\SponsorReview.aspx" />
     <Content Include="EvaluationForms\PeerReview.aspx" />
     <Content Include="index.html" />
@@ -205,6 +206,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="EvaluationForms\FormData.cs" />
+    <Compile Include="EvaluationForms\PresentationReview.aspx.cs">
+      <DependentUpon>PresentationReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EvaluationForms\PresentationReview.aspx.designer.cs">
+      <DependentUpon>PresentationReview.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EvaluationForms\SponsorReview.aspx.cs">
       <DependentUpon>SponsorReview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

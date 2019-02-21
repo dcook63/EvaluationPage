@@ -10,7 +10,7 @@
 namespace MockupGUI {
     
     
-    public partial class SponsorReview {
+    public partial class PresentationReview {
         
         /// <summary>
         /// question_one control.

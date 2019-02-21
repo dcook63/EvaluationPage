@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Evaluation Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PeerReview.aspx.cs" Inherits="MockupGUI.PeerReview" %>
+﻿<%@ Page Title="Evaluation Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PresentationReview.aspx.cs" Inherits="MockupGUI.PresentationReview" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -25,8 +25,8 @@
                         <a href="#!">Evaluation Form</a>
                         <ul class="nav-dropdown">
                             <li><a href="SponsorReview.aspx">Sponsor Evaluation</a></li>
-                            <li><a href="#!">Peer Evaluation</a></li>
-                            <li><a href="PresentationReview.aspx">Presentation Evaluation</a></li>
+                            <li><a href="PeerReview.aspx">Peer Evaluation</a></li>
+                            <li><a href="#!">Presentation Evaluation</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -38,7 +38,7 @@
     <section class="header">
     <h1 id="cms">Capstone Management System</h1>
     <br />
-    <h3 id="page">Peer Review</h3>
+    <h3 id="page">Presentation Review</h3>
   </section>
 
     <!-- Main -->
