@@ -13,6 +13,15 @@ namespace MockupGUI {
     public partial class EvaluationReport {
         
         /// <summary>
+        /// FormSelect control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList FormSelect;
+        
+        /// <summary>
         /// groups control.
         /// </summary>
         /// <remarks>

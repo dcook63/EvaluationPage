@@ -51,26 +51,27 @@
             <%-- Table Section --%>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label runat="server" Text="This is a Label. Whatever you put in this will appear as plain text on the webpage"></asp:Label>
+                    <asp:Label runat="server" Text="Select which form to report"></asp:Label>
                 </asp:TableCell>
                 </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:GridView runat="server" ID="groups">
-                        <Columns>
-                            <asp:BoundField DataField="" HeaderText="" />
-                        </Columns>
-                    </asp:GridView>
+                    <asp:DropDownList runat="server" ID="FormSelect">
+                        <asp:ListItem>Sponsor Evaluation</asp:ListItem>
+                        <asp:ListItem>Peer Evaluation</asp:ListItem>
+                        <asp:ListItem>Presentation Evaluation</asp:ListItem>
+                    </asp:DropDownList>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <div style="wid; height: 400px; overflow: scroll; padding-left: 0px; padding-right: 0px; margin: 0px">
+                        <asp:GridView runat="server" ID="groups" AlternatingRowStyle-BackColor="lightgray" HeaderStyle-BorderWidth="2px" 
+                            HeaderStyle-BorderColor="black" HeaderStyle-BackColor="#feba18"></asp:GridView>
+                    </div>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow Height="25"></asp:TableRow>
-
-            <%-- It is a good idea to section off different areas to keep track of what controls what --%>
-            <asp:TableRow>
-                <asp:TableCell>
-                    <button>Submit</button>
-                </asp:TableCell>
-            </asp:TableRow>
 
             <%-- End of table --%>
         </asp:Table>
