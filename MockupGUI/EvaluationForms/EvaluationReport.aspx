@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Evaluation Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PeerReview.aspx.cs" Inherits="MockupGUI.PeerReview" %>
+﻿<%@ Page Title="Evaluation Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EvaluationReport.aspx.cs" Inherits="MockupGUI.EvaluationReport" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -25,9 +25,9 @@
                         <a href="#!">Evaluation Form</a>
                         <ul class="nav-dropdown">
                             <li><a href="SponsorReview.aspx">Sponsor Evaluation</a></li>
-                            <li><a href="#!">Peer Evaluation</a></li>
+                            <li><a href="PeerEvaluation.aspx">Peer Evaluation</a></li>
                             <li><a href="PresentationReview.aspx">Presentation Evaluation</a></li>
-                            <li><a href="EvaluationReport.aspx">Evaluation Report</a></li>
+                            <li><a href="#!">Evaluation Report</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -39,7 +39,7 @@
     <section class="header">
     <h1 id="cms">Capstone Management System</h1>
     <br />
-    <h3 id="page">Peer Review</h3>
+    <h3 id="page">Evaluation Report</h3>
   </section>
 
     <!-- Main -->
@@ -54,27 +54,13 @@
                     <asp:Label runat="server" Text="This is a Label. Whatever you put in this will appear as plain text on the webpage"></asp:Label>
                 </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow>
+            <asp:TableRow>
                 <asp:TableCell>
-                    <%-- Radio Button List --%>
-                    <asp:RadioButtonList runat="server" id="question_one" RepeatDirection="Horizontal">
-                        <asp:ListItem>1</asp:ListItem>
-                        <asp:ListItem>2</asp:ListItem>
-                        <asp:ListItem>3</asp:ListItem>
-                        <asp:ListItem>4</asp:ListItem>
-                        <asp:ListItem>5</asp:ListItem>
-                        <asp:ListItem>6</asp:ListItem>
-                        <asp:ListItem>7</asp:ListItem>
-                        <asp:ListItem>8</asp:ListItem>
-                        <asp:ListItem>9</asp:ListItem>
-                        <asp:ListItem>10</asp:ListItem>
-                    </asp:RadioButtonList>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow Height="15px"></asp:TableRow>
-            <asp:TableRow height="75px">
-                <asp:TableCell Width="100%" height="75px">
-                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="commentBox1"></asp:textbox>
+                    <asp:GridView runat="server" ID="groups">
+                        <Columns>
+                            <asp:BoundField DataField="" HeaderText="" />
+                        </Columns>
+                    </asp:GridView>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow Height="25"></asp:TableRow>

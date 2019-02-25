@@ -27,6 +27,7 @@
                             <li><a href="#!">Sponsor Evaluation</a></li>
                             <li><a href="PeerReview.aspx">Peer Evaluation</a></li>
                             <li><a href="PresentationReview.aspx">Presentation Evaluation</a></li>
+                            <li><a href="EvaluationReport.aspx">Evaluation Report</a></li>
                         </ul>
                     </li>
                 </ul>
