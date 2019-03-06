@@ -22,7 +22,7 @@ namespace MockupGUI
         //Method is linked to .aspx button. Look for "OnClick" in .aspx file to see link
         protected void SubmitForm(object sender, EventArgs e)
         {
-            FormData _formData = new FormData(); //Use this class to store variables obtained from Web Form
+            FormData _formData = new FormData(); //Use this class to store variables obtained from Web For
 
             /*
                     Example of how to insert data into a SQL Table
