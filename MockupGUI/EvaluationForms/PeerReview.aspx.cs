@@ -33,5 +33,10 @@ namespace MockupGUI
             cmd.Parameters.AddWithValue("@Contribution", _formData.Contribution);
             */
         }
+
+        protected void Textbox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
