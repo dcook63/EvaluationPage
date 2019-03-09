@@ -43,41 +43,35 @@
   </section>
 
     <!-- Main -->
-    <section class="main" style="padding:100px">
+    <section class="main" style="padding:100px; height:50px">
     <div class="margin" style="text-align: center;">
         <br />
         <asp:Table runat="server">
-
-            <%-- Table Section --%>
             <asp:TableRow>
                 <asp:TableCell>
                     <asp:Label runat="server" Text="Select which form to report"></asp:Label>
                 </asp:TableCell>
-                </asp:TableRow>
+            </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:DropDownList runat="server" ID="FormSelect">
-                        <asp:ListItem>Sponsor Evaluation</asp:ListItem>
+                    <asp:DropDownList runat="server" ID="FormSelect" OnSelectedIndexChanged="EvalReportSelect" AutoPostBack="true">
                         <asp:ListItem>Peer Evaluation</asp:ListItem>
                         <asp:ListItem>Presentation Evaluation</asp:ListItem>
+                        <asp:ListItem>Sponsor Evaluation</asp:ListItem>
                     </asp:DropDownList>
                 </asp:TableCell>
             </asp:TableRow>
-            <asp:TableRow>
-                <asp:TableCell>
-                    <div style="wid; height: 400px; overflow: scroll; padding-left: 0px; padding-right: 0px; margin: 0px">
-                        <asp:GridView runat="server" ID="groups" AlternatingRowStyle-BackColor="lightgray" HeaderStyle-BorderWidth="2px" 
-                            HeaderStyle-BorderColor="black" HeaderStyle-BackColor="#feba18"></asp:GridView>
-                    </div>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow Height="25"></asp:TableRow>
-
-            <%-- End of table --%>
         </asp:Table>
         <br />
     </div>
+        
     </section>
+    <div overflow: scroll; padding-left: 50px; padding-right: 0px; margin: 50px; align-content: center">
+        <asp:Label runat="server" ID="scLabel" autopostback="true"></asp:Label>
+        <asp:GridView runat="server" ID="groups" AlternatingRowStyle-BackColor="lightgray" HeaderStyle-BorderWidth="2px" 
+            HeaderStyle-BorderColor="black" HeaderStyle-BackColor="#feba18" HorizontalAlign="Center" AutoGenerateColumns="false">
+        </asp:GridView>
+    </div>
 
     <!-- Footer -->
   <section class="footer">
