@@ -20,12 +20,35 @@ namespace MockupGUI
                 groups.Columns.Clear();
                 if (form == "Peer Evaluation")
                 {
+                    form = "Peer_Review";
+                    scLabel.Text = ("Scores For Peer Evaluation");
+                    searchup.Text = ("Search for Student");
+
                     BoundField contribution = new BoundField();
                     contribution.DataField = "Contribution";
                     contribution.HeaderText = "Contribution";
-                    form = "Peer_Review";
-                    scLabel.Text = ("Scores For Peer Evaluation");
+
+                    BoundField communication = new BoundField();
+                    communication.DataField = "Communication";
+                    communication.HeaderText = ". Communication .";
+
+                    BoundField teamwork = new BoundField();
+                    teamwork.DataField = "Teamwork";
+                    teamwork.HeaderText = "Teamwork";
+
+                    BoundField general = new BoundField();
+                    general.DataField = "General";
+                    general.HeaderText = "General";
+
+                    BoundField overall = new BoundField();
+                    overall.DataField = "Overall";
+                    overall.HeaderText = "Overall";
+
                     groups.Columns.Add(contribution);
+                    groups.Columns.Add(communication);
+                    groups.Columns.Add(teamwork);
+                    groups.Columns.Add(general);
+                    groups.Columns.Add(overall);
                 }
 
                 else if (form == "Sponsor Evaluation")
@@ -35,6 +58,7 @@ namespace MockupGUI
                     clarity.HeaderText = "Clarity";
                     form = "Sponsor_Eval";
                     scLabel.Text = ("Scores For Sponsor Evaluation");
+                    searchup.Text = ("Search for Team");
                     groups.Columns.Add(clarity);
                 }
                     
@@ -45,6 +69,7 @@ namespace MockupGUI
                     poster.HeaderText = "Poster";
                     form = "Presentation_Eval";
                     scLabel.Text = ("Scores For Presentation Evaluation");
+                    searchup.Text = ("Search for Team");
                     groups.Columns.Add(poster);
                 }
 

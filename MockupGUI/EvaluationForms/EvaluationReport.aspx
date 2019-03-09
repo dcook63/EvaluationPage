@@ -43,7 +43,7 @@
   </section>
 
     <!-- Main -->
-    <section class="main" style="padding:100px; height:50px">
+    <section class="main" style="height:40px">
     <div class="margin" style="text-align: center;">
         <br />
         <asp:Table runat="server">
@@ -64,13 +64,20 @@
         </asp:Table>
         <br />
     </div>
-        
     </section>
-    <div overflow: scroll; padding-left: 50px; padding-right: 0px; margin: 50px; align-content: center">
-        <asp:Label runat="server" ID="scLabel" autopostback="true"></asp:Label>
-        <asp:GridView runat="server" ID="groups" AlternatingRowStyle-BackColor="lightgray" HeaderStyle-BorderWidth="2px" 
-            HeaderStyle-BorderColor="black" HeaderStyle-BackColor="#feba18" HorizontalAlign="Center" AutoGenerateColumns="false">
-        </asp:GridView>
+
+    <div style="margin: 50px; align-content: center">
+        <asp:Label runat="server" ID="searchup"></asp:Label>
+        <input id="search-input" type="text" onkeypress="checkForMatches()" />
+        <asp:TextBox runat="server" AutoCompleteType="Search"></asp:TextBox>
+        <div>
+            <asp:Label runat="server" ID="scLabel" autopostback="true"></asp:Label>
+            <div style="margin-top:10px">
+                <asp:GridView runat="server" ID="groups" AlternatingRowStyle-BackColor="white" HeaderStyle-BorderWidth="2px" 
+                    HeaderStyle-BorderColor="black" HeaderStyle-BackColor="#feba18" AutoGenerateColumns="false" RowStyle-HorizontalAlign="Center">
+                </asp:GridView>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -78,4 +85,51 @@
     <p>© Copyright 2019. All Rights Reserved.</p>
   </section>
 
+    <script>
+        searchForMatches(event) {
+            xhttp = new XMLHttpRequest();
+            var input = document.getElementById("search-input");
+            var searchTerm = input.value;
+            var sqlQuery = "SELECT * from Student WHERE LOWER(FirstName) LIKE LOWER(" + searchTerm + ")";
+
+            xhttp.open("")
+        };
+    </script>
+
+    <?php
+        $mysqli = new mysqli("servername", "username", "password", "dbname");
+        if($mysqli->connect_error) {
+          exit('Could not connect');
+        }
+
+        $sql = "SELECT customerid, companyname, contactname, address, city, postalcode, country
+        FROM customers WHERE customerid = ?";
+
+        $stmt = $mysqli->prepare(sql);
+        $stmt->bind_param("s", $_GET['q']);
+        $stmt->execute();
+        $stmt->store_result();
+        $stmt->bind_result($cid, $cname, $name, $adr, $city, $pcode, $country);
+        $stmt->fetch();
+        $stmt->close();
+
+        echo "<table>";
+        echo "<tr>";
+        echo "<th>CustomerID</th>";
+        echo "<td>" . $cid . "</td>";
+        echo "<th>CompanyName</th>";
+        echo "<td>" . $cname . "</td>";
+        echo "<th>ContactName</th>";
+        echo "<td>" . $name . "</td>";
+        echo "<th>Address</th>";
+        echo "<td>" . $adr . "</td>";
+        echo "<th>City</th>";
+        echo "<td>" . $city . "</td>";
+        echo "<th>PostalCode</th>";
+        echo "<td>" . $pcode . "</td>";
+        echo "<th>Country</th>";
+        echo "<td>" . $country . "</td>";
+        echo "</tr>";
+        echo "</table>";
+    ?>
 </asp:Content>
