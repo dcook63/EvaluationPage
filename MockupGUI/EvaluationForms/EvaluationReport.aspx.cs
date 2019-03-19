@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace MockupGUI
 {
@@ -22,7 +23,8 @@ namespace MockupGUI
                 {
                     form = "Peer_Review";
                     scLabel.Text = ("Scores For Peer Evaluation");
-                    searchup.Text = ("Search for Student");
+                    searchup.Text = ("Search for Group");
+                    searchup2.Text = ("Search for Student");
 
                     BoundField contribution = new BoundField();
                     contribution.DataField = "Contribution";
@@ -58,7 +60,7 @@ namespace MockupGUI
                     clarity.HeaderText = "Clarity";
                     form = "Sponsor_Eval";
                     scLabel.Text = ("Scores For Sponsor Evaluation");
-                    searchup.Text = ("Search for Team");
+                    searchup.Text = ("Search for Group");
                     groups.Columns.Add(clarity);
                 }
                     
@@ -69,15 +71,73 @@ namespace MockupGUI
                     poster.HeaderText = "Poster";
                     form = "Presentation_Eval";
                     scLabel.Text = ("Scores For Presentation Evaluation");
-                    searchup.Text = ("Search for Team");
+                    searchup.Text = ("Search for Group");
                     groups.Columns.Add(poster);
                 }
 
-                SqlDataAdapter data = new SqlDataAdapter("SELECT * FROM " + form, con);
-                DataTable table = new DataTable();
-                data.Fill(table);
-                groups.DataSource = table;
-                groups.DataBind();
+                if (!IsPostBack)
+                {
+                    try
+                    {
+                        //Clear Groups Dropdown List
+                        groupList.Items.Clear();
+
+                        DataTable grouptable = new DataTable();
+                        SqlDataAdapter groupdata = new SqlDataAdapter("SELECT Project_No FROM Project", con);
+                        groupdata.Fill(grouptable);
+                        groupList.DataSource = grouptable;
+                        groupList.DataTextField = "Project_No";
+                        groupList.DataValueField = "Project_No";
+                        groupList.DataBind();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+
+                //Clear Groups Dropdown List
+                studentList.Items.Clear();
+
+                try
+                {
+                    string i = groupList.SelectedValue;
+                    string query = @"SELECT 
+                                    FirstName, LastName
+                                From
+                                    Project_Assignment
+                                INNER JOIN
+                                    Student ON Student.Student_ID = Project_Assignment.Student_ID
+                                INNER JOIN
+                                    Project ON Project.Project_ID = Project_Assignment.Project_ID
+                                WHERE
+                                    Project.Project_No = " + i;
+                    DataTable studenttable = new DataTable();
+                    SqlDataAdapter studentdata = new SqlDataAdapter(query, con);
+                    studentdata.Fill(studenttable);
+                    studentList.DataSource = studenttable;
+                    studentList.DataTextField = "FirstName";
+                    studentList.DataValueField = "FirstName";
+                    studentList.DataBind();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
+                try
+                {
+                    //Fill report 1
+                    SqlDataAdapter data = new SqlDataAdapter("SELECT * FROM " + form, con);
+                    DataTable table = new DataTable();
+                    data.Fill(table);
+                    groups.DataSource = table;
+                    groups.DataBind();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             } 
         }
 
@@ -92,7 +152,5 @@ namespace MockupGUI
                 scLabel.Text = ("Scores For Presentation Evaluation");
             Page_Load(Server, e);
         }
-
-            
     }
 }
