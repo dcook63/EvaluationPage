@@ -40,24 +40,6 @@ namespace MockupGUI {
         protected global::System.Web.UI.WebControls.DropDownList groupList;
         
         /// <summary>
-        /// searchup2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label searchup2;
-        
-        /// <summary>
-        /// studentList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList studentList;
-        
-        /// <summary>
         /// scLabel control.
         /// </summary>
         /// <remarks>

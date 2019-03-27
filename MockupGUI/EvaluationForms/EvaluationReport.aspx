@@ -69,9 +69,6 @@
     <div style="margin: 50px; align-content: center">
         <asp:Label runat="server" ID="searchup"></asp:Label>
         <asp:DropDownList runat="server" ID="groupList" style="margin-right:15px; margin-left:10px" AutoPostBack="true"></asp:DropDownList>
-        <asp:Label runat="server" ID="searchup2"></asp:Label>
-        <asp:DropDownList runat="server" ID="studentList" style="margin-right:15px; margin-left:10px" AutoPostBack="true"></asp:DropDownList>
-        <div style="margin:10px; margin-left:0px">
             <asp:Label runat="server" ID="scLabel" autopostback="true"></asp:Label>
         </div>
         <div style="margin-top:10px">

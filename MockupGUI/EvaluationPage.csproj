@@ -126,12 +126,12 @@
     <Content Include="EvaluationForms\PresentationReview.aspx" />
     <Content Include="EvaluationForms\SponsorReview.aspx" />
     <Content Include="EvaluationForms\PeerReview.aspx" />
-    <Content Include="index.html" />
+    <Content Include="images\ksu_logo.png" />
     <Content Include="images\ksuowls.jpg" />
+    <Content Include="index.html" />
     <Content Include="icon.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="images\ksu_logo.png" />
     <Content Include="Login.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />

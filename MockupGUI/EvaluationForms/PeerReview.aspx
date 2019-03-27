@@ -10,7 +10,7 @@
     <script src="/js/nav.js"></script>
 
     <!-- Nav -->
-    <section class="navigation">
+    <section class="navigation" >
         <div class="nav-container">
             <div class="brand">
                 <img src="/images/ksu_logo.png" id="logo" />
@@ -65,7 +65,7 @@
 
 
     <!-- Main -->
-    <section class="main" style="padding:100px">
+    <section class="main" style="padding:100px; height:100%">
     <div class="margin" style="text-align: center;">
         <br />
 

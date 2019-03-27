@@ -24,7 +24,6 @@ namespace MockupGUI
                     form = "Peer_Review";
                     scLabel.Text = ("Scores For Peer Evaluation");
                     searchup.Text = ("Search for Group");
-                    searchup2.Text = ("Search for Student");
 
                     BoundField contribution = new BoundField();
                     contribution.DataField = "Contribution";
@@ -94,35 +93,6 @@ namespace MockupGUI
                     {
                         MessageBox.Show(ex.ToString());
                     }
-                }
-
-                //Clear Groups Dropdown List
-                studentList.Items.Clear();
-
-                try
-                {
-                    string i = groupList.SelectedValue;
-                    string query = @"SELECT 
-                                    FirstName, LastName
-                                From
-                                    Project_Assignment
-                                INNER JOIN
-                                    Student ON Student.Student_ID = Project_Assignment.Student_ID
-                                INNER JOIN
-                                    Project ON Project.Project_ID = Project_Assignment.Project_ID
-                                WHERE
-                                    Project.Project_No = " + i;
-                    DataTable studenttable = new DataTable();
-                    SqlDataAdapter studentdata = new SqlDataAdapter(query, con);
-                    studentdata.Fill(studenttable);
-                    studentList.DataSource = studenttable;
-                    studentList.DataTextField = "FirstName";
-                    studentList.DataValueField = "FirstName";
-                    studentList.DataBind();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
                 }
 
                 try
