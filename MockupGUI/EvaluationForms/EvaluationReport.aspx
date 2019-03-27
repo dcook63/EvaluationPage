@@ -68,12 +68,13 @@
 
     <div style="margin: 50px; align-content: center">
         <asp:Label runat="server" ID="searchup"></asp:Label>
-        <asp:DropDownList runat="server" ID="groupList" style="margin-right:15px; margin-left:10px" AutoPostBack="true"></asp:DropDownList>
+        <asp:DropDownList runat="server" ID="groupList" style="margin-right:15px; margin-left:10px" AutoPostBack="true"><asp:ListItem>All</asp:ListItem></asp:DropDownList>
+        <div style="padding-top:10px">
             <asp:Label runat="server" ID="scLabel" autopostback="true"></asp:Label>
         </div>
         <div style="margin-top:10px">
             <asp:GridView runat="server" ID="groups" AlternatingRowStyle-BackColor="white" HeaderStyle-BorderWidth="2px" 
-                HeaderStyle-BorderColor="black" HeaderStyle-BackColor="#feba18" AutoGenerateColumns="false" RowStyle-HorizontalAlign="Center">
+                HeaderStyle-BorderColor="black" HeaderStyle-BackColor="#feba18" AutoGenerateColumns="False" RowStyle-HorizontalAlign="Center" ForeColor="Black" CellSpacing="2">
             </asp:GridView>
         </div>
      </div>
