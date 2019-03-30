@@ -42,35 +42,26 @@
     <h3 id="page">Peer Review</h3>
   </section>
 
-    <!-- Student info -->
-  <body>
-      <p> <asp:Label ID="Namelabel" runat="server" AssociatedControlID="Textbox6" Text=" First Name:" />
-          <asp:textbox runat="server"  ID="Textbox6" OnTextChanged="Textbox6_TextChanged"></asp:textbox> 
-      </p>
-
-      <p> <asp:Label ID="Namelabel2" runat="server" AssociatedControlID="Textbox8" Text=" Last Name:" />
-          <asp:textbox runat="server"  ID="Textbox8"></asp:textbox>
-      </p>
-
-      <p> <asp:Label ID="Namelabel3" runat="server" AssociatedControlID="Textbox10" Text=" Group Number You are reviewing:" />
-         <asp:textbox runat="server"  ID="Textbox10" MaxLength="2" Height="32px" TextMode="Number" Width="20px"></asp:textbox> 
-
-      </p>
-    
-        
-     
-
-
-  </body>
-
-
     <!-- Main -->
-    <section class="main" style="padding:100px; height:100%">
-    <div class="margin" style="text-align: center;">
+    <section class="main" style="padding:100px;  height:100%">
+    <div class="margin" style="text-align: center; height:100%">
+
+
+        <div style="margin: 50px; align-content: center">
+            <asp:Label runat="server" ID="searchup" Text="Search For Group"></asp:Label>
+            <asp:DropDownList runat="server" ID="groupList" style="margin-right:15px; margin-left:10px" AutoPostBack="true"></asp:DropDownList>
+            <asp:Label runat="server" ID="searchup2" Text="Search For Student"></asp:Label>
+            <asp:DropDownList runat="server" ID="studentList" style="margin-right:15px; margin-left:10px" AutoPostBack="true"></asp:DropDownList>
+            <div style="margin:10px; margin-left:0px">
+                <asp:Label runat="server" ID="scLabel" autopostback="true"></asp:Label>
+            </div>
+            <div style="margin-top:10px">
+                <asp:GridView runat="server" ID="groups" AlternatingRowStyle-BackColor="white" HeaderStyle-BorderWidth="2px" 
+                    HeaderStyle-BorderColor="black" HeaderStyle-BackColor="#feba18" AutoGenerateColumns="false" RowStyle-HorizontalAlign="Center">
+                </asp:GridView>
+            </div>
+        </div>
         <br />
-
-
-
 
         <asp:Table runat="server">
 

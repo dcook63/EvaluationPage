@@ -43,8 +43,24 @@
   </section>
 
     <!-- Main Content -->
-    <section class="main" style="padding:100px">
-    <div class="margin" style="text-align: center;">
+    <section class="main" style="padding:100px;  height:100%">
+    <div class="margin" style="text-align: center; height:100%">
+
+
+        <div style="margin: 50px; align-content: center">
+            <asp:Label runat="server" ID="searchup" Text="Search For Group"></asp:Label>
+            <asp:DropDownList runat="server" ID="groupList" style="margin-right:15px; margin-left:10px" AutoPostBack="true"></asp:DropDownList>
+            <asp:Label runat="server" ID="searchup2" Text="Search For Student"></asp:Label>
+            <asp:DropDownList runat="server" ID="studentList" style="margin-right:15px; margin-left:10px" AutoPostBack="true"></asp:DropDownList>
+            <div style="margin:10px; margin-left:0px">
+                <asp:Label runat="server" ID="scLabel" autopostback="true"></asp:Label>
+            </div>
+            <div style="margin-top:10px">
+                <asp:GridView runat="server" ID="groups" AlternatingRowStyle-BackColor="white" HeaderStyle-BorderWidth="2px" 
+                    HeaderStyle-BorderColor="black" HeaderStyle-BackColor="#feba18" AutoGenerateColumns="false" RowStyle-HorizontalAlign="Center">
+                </asp:GridView>
+            </div>
+        </div>
         <br />
         <asp:Table runat="server">
 

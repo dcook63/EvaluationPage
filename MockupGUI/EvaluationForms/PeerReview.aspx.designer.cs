@@ -13,58 +13,58 @@ namespace MockupGUI {
     public partial class PeerReview {
         
         /// <summary>
-        /// Namelabel control.
+        /// searchup control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Namelabel;
+        protected global::System.Web.UI.WebControls.Label searchup;
         
         /// <summary>
-        /// Textbox6 control.
+        /// groupList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Textbox6;
+        protected global::System.Web.UI.WebControls.DropDownList groupList;
         
         /// <summary>
-        /// Namelabel2 control.
+        /// searchup2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Namelabel2;
+        protected global::System.Web.UI.WebControls.Label searchup2;
         
         /// <summary>
-        /// Textbox8 control.
+        /// studentList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Textbox8;
+        protected global::System.Web.UI.WebControls.DropDownList studentList;
         
         /// <summary>
-        /// Namelabel3 control.
+        /// scLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Namelabel3;
+        protected global::System.Web.UI.WebControls.Label scLabel;
         
         /// <summary>
-        /// Textbox10 control.
+        /// groups control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Textbox10;
+        protected global::System.Web.UI.WebControls.GridView groups;
         
         /// <summary>
         /// question_one control.
