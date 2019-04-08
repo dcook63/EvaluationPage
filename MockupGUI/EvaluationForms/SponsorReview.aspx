@@ -42,16 +42,32 @@
     <h3 id="page">Sponsor Review</h3>
   </section>
 
-    <!-- Main Content -->
-    <section class="main" style="padding:100px">
-    <div class="margin" style="text-align: center;">
+    <!-- Main -->
+    <section class="main" style="padding:100px;  height:100%">
+    <div class="margin" style="text-align: center; height:100%">
+
+
+        <div style="margin: 50px; align-content: center">
+            <asp:Label runat="server" ID="searchup" Text="Search For Group"></asp:Label>
+            <asp:DropDownList runat="server" ID="groupList" style="margin-right:15px; margin-left:10px" AutoPostBack="true"></asp:DropDownList>
+            <asp:Label runat="server" ID="searchup2" Text="Search For Student"></asp:Label>
+            <asp:DropDownList runat="server" ID="studentList" style="margin-right:15px; margin-left:10px" AutoPostBack="true"></asp:DropDownList>
+            <div style="margin:10px; margin-left:0px">
+                <asp:Label runat="server" ID="scLabel" autopostback="true"></asp:Label>
+            </div>
+            <div style="margin-top:10px">
+                <asp:GridView runat="server" ID="groups" AlternatingRowStyle-BackColor="white" HeaderStyle-BorderWidth="2px" 
+                    HeaderStyle-BorderColor="black" HeaderStyle-BackColor="#feba18" AutoGenerateColumns="false" RowStyle-HorizontalAlign="Center">
+                </asp:GridView>
+            </div>
+        </div>
         <br />
         <asp:Table runat="server">
 
             <%-- Table Section --%>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label runat="server" Text="This is a Label. Whatever you put in this will appear as plain text on the webpage"></asp:Label>
+                    <asp:Label runat="server" Text="Poster design: the quality and creativity of the poster, including style, layout, content, readability, media use, etc"></asp:Label>
                 </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
@@ -74,10 +90,199 @@
             <asp:TableRow Height="15px"></asp:TableRow>
             <asp:TableRow height="75px">
                 <asp:TableCell Width="100%" height="75px">
-                    <asp:TextBox runat="server" height="75px" width="100%" placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="commentBox1"></asp:TextBox>
+                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="commentBox1"></asp:textbox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow Height="25"></asp:TableRow>
+
+            <%-- Question 2 --%>
+                <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label runat="server" Text="Team talk: how well does the team communicate with the audience?"></asp:Label>
+                </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                <asp:TableCell>
+                    <%-- Radio Button List --%>
+                    <asp:RadioButtonList runat="server" id="question_two" RepeatDirection="Horizontal">
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
+                        <asp:ListItem>3</asp:ListItem>
+                        <asp:ListItem>4</asp:ListItem>
+                        <asp:ListItem>5</asp:ListItem>
+                        <asp:ListItem>6</asp:ListItem>
+                        <asp:ListItem>7</asp:ListItem>
+                        <asp:ListItem>8</asp:ListItem>
+                        <asp:ListItem>9</asp:ListItem>
+                        <asp:ListItem>10</asp:ListItem>
+                    </asp:RadioButtonList>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow Height="15px"></asp:TableRow>
+            <asp:TableRow height="75px">
+                <asp:TableCell Width="100%" height="75px">
+                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="Textbox1"></asp:textbox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow Height="25"></asp:TableRow>
+
+            <%-- Question 3 --%>
+              <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label runat="server" Text="Presentation slides and content: quality of presentation slides and content; covered major aspects of the project in a logical flow."></asp:Label>
+                </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                <asp:TableCell>
+                    <%-- Radio Button List --%>
+                    <asp:RadioButtonList runat="server" id="question_three" RepeatDirection="Horizontal">
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
+                        <asp:ListItem>3</asp:ListItem>
+                        <asp:ListItem>4</asp:ListItem>
+                        <asp:ListItem>5</asp:ListItem>
+                        <asp:ListItem>6</asp:ListItem>
+                        <asp:ListItem>7</asp:ListItem>
+                        <asp:ListItem>8</asp:ListItem>
+                        <asp:ListItem>9</asp:ListItem>
+                        <asp:ListItem>10</asp:ListItem>
+                    </asp:RadioButtonList>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow Height="15px"></asp:TableRow>
+            <asp:TableRow height="75px">
+                <asp:TableCell Width="100%" height="75px">
+                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="Textbox2"></asp:textbox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow Height="25"></asp:TableRow>
+
+            <%-- Question 4 --%>
+              <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label runat="server" Text="Presentation skill and performance: how well did the team talk to the audience about the project and answer questions? Demonstrated confidence and enthusiasm."></asp:Label>
+                </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                <asp:TableCell>
+                    <%-- Radio Button List --%>
+                    <asp:RadioButtonList runat="server" id="question_four" RepeatDirection="Horizontal">
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
+                        <asp:ListItem>3</asp:ListItem>
+                        <asp:ListItem>4</asp:ListItem>
+                        <asp:ListItem>5</asp:ListItem>
+                        <asp:ListItem>6</asp:ListItem>
+                        <asp:ListItem>7</asp:ListItem>
+                        <asp:ListItem>8</asp:ListItem>
+                        <asp:ListItem>9</asp:ListItem>
+                        <asp:ListItem>10</asp:ListItem>
+                    </asp:RadioButtonList>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow Height="15px"></asp:TableRow>
+            <asp:TableRow height="75px">
+                <asp:TableCell Width="100%" height="75px">
+                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="Textbox3"></asp:textbox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow Height="25"></asp:TableRow>
+
+            <%-- Question 5 --%>
+              <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label runat="server" Text="Project goals and deliverables: completion of the project goals and deliverables; quality of the solution and work; application of appropriate technologies, practices, and methods. "></asp:Label>
+                </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                <asp:TableCell>
+                    <%-- Radio Button List --%>
+                    <asp:RadioButtonList runat="server" id="question_five" RepeatDirection="Horizontal">
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
+                        <asp:ListItem>3</asp:ListItem>
+                        <asp:ListItem>4</asp:ListItem>
+                        <asp:ListItem>5</asp:ListItem>
+                        <asp:ListItem>6</asp:ListItem>
+                        <asp:ListItem>7</asp:ListItem>
+                        <asp:ListItem>8</asp:ListItem>
+                        <asp:ListItem>9</asp:ListItem>
+                        <asp:ListItem>10</asp:ListItem>
+                    </asp:RadioButtonList>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow Height="15px"></asp:TableRow>
+            <asp:TableRow height="75px">
+                <asp:TableCell Width="100%" height="75px">
+                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="Textbox4"></asp:textbox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow Height="25"></asp:TableRow>
+
+            <%-- Question 6 --%>
+              <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label runat="server" Text="Soft skills: demonstrated good project experiences related to soft skills, including communication, team work, dealing with challenges, learning, research, documentation, project management, etc."></asp:Label>
+                </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                <asp:TableCell>
+                    <%-- Radio Button List --%>
+                    <asp:RadioButtonList runat="server" id="question_six" RepeatDirection="Horizontal">
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
+                        <asp:ListItem>3</asp:ListItem>
+                        <asp:ListItem>4</asp:ListItem>
+                        <asp:ListItem>5</asp:ListItem>
+                        <asp:ListItem>6</asp:ListItem>
+                        <asp:ListItem>7</asp:ListItem>
+                        <asp:ListItem>8</asp:ListItem>
+                        <asp:ListItem>9</asp:ListItem>
+                        <asp:ListItem>10</asp:ListItem>
+                    </asp:RadioButtonList>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow Height="15px"></asp:TableRow>
+            <asp:TableRow height="75px">
+                <asp:TableCell Width="100%" height="75px">
+                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="Textbox5"></asp:textbox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow Height="25"></asp:TableRow>
+
+            <%-- Question 7 --%>
+              <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label runat="server" Text="What is your overall evaluation score of this project?"></asp:Label>
+                </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                <asp:TableCell>
+                    <%-- Radio Button List --%>
+                    <asp:RadioButtonList runat="server" id="question_seven" RepeatDirection="Horizontal">
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
+                        <asp:ListItem>3</asp:ListItem>
+                        <asp:ListItem>4</asp:ListItem>
+                        <asp:ListItem>5</asp:ListItem>
+                        <asp:ListItem>6</asp:ListItem>
+                        <asp:ListItem>7</asp:ListItem>
+                        <asp:ListItem>8</asp:ListItem>
+                        <asp:ListItem>9</asp:ListItem>
+                        <asp:ListItem>10</asp:ListItem>
+                    </asp:RadioButtonList>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow Height="15px"></asp:TableRow>
+            <asp:TableRow height="75px">
+                <asp:TableCell Width="100%" height="75px">
+                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="Textbox6"></asp:textbox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow Height="25"></asp:TableRow>
+
+
+            <%-- End of Questions --%>
 
             <%-- It is a good idea to section off different areas to keep track of what controls what --%>
             <asp:TableRow>

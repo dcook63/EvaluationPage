@@ -13,58 +13,58 @@ namespace MockupGUI {
     public partial class PeerReview {
         
         /// <summary>
-        /// Namelabel control.
+        /// searchup control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Namelabel;
+        protected global::System.Web.UI.WebControls.Label searchup;
         
         /// <summary>
-        /// Textbox6 control.
+        /// groupList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Textbox6;
+        protected global::System.Web.UI.WebControls.DropDownList groupList;
         
         /// <summary>
-        /// Namelabel2 control.
+        /// searchup2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Namelabel2;
+        protected global::System.Web.UI.WebControls.Label searchup2;
         
         /// <summary>
-        /// Textbox8 control.
+        /// studentList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Textbox8;
+        protected global::System.Web.UI.WebControls.DropDownList studentList;
         
         /// <summary>
-        /// Namelabel3 control.
+        /// scLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Namelabel3;
+        protected global::System.Web.UI.WebControls.Label scLabel;
         
         /// <summary>
-        /// Textbox10 control.
+        /// groups control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Textbox10;
+        protected global::System.Web.UI.WebControls.GridView groups;
         
         /// <summary>
         /// question_one control.
@@ -85,13 +85,13 @@ namespace MockupGUI {
         protected global::System.Web.UI.WebControls.TextBox commentBox1;
         
         /// <summary>
-        /// RadioButtonList1 control.
+        /// question_two control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
+        protected global::System.Web.UI.WebControls.RadioButtonList question_two;
         
         /// <summary>
         /// Textbox1 control.
@@ -103,13 +103,13 @@ namespace MockupGUI {
         protected global::System.Web.UI.WebControls.TextBox Textbox1;
         
         /// <summary>
-        /// RadioButtonList2 control.
+        /// question_three control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList2;
+        protected global::System.Web.UI.WebControls.RadioButtonList question_three;
         
         /// <summary>
         /// Textbox2 control.
@@ -121,13 +121,13 @@ namespace MockupGUI {
         protected global::System.Web.UI.WebControls.TextBox Textbox2;
         
         /// <summary>
-        /// RadioButtonList3 control.
+        /// question_four control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList3;
+        protected global::System.Web.UI.WebControls.RadioButtonList question_four;
         
         /// <summary>
         /// Textbox3 control.
@@ -139,13 +139,13 @@ namespace MockupGUI {
         protected global::System.Web.UI.WebControls.TextBox Textbox3;
         
         /// <summary>
-        /// RadioButtonList4 control.
+        /// question_five control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList4;
+        protected global::System.Web.UI.WebControls.RadioButtonList question_five;
         
         /// <summary>
         /// Textbox4 control.
@@ -157,13 +157,13 @@ namespace MockupGUI {
         protected global::System.Web.UI.WebControls.TextBox Textbox4;
         
         /// <summary>
-        /// RadioButtonList5 control.
+        /// question_six control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList5;
+        protected global::System.Web.UI.WebControls.RadioButtonList question_six;
         
         /// <summary>
         /// Textbox5 control.
@@ -173,5 +173,23 @@ namespace MockupGUI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Textbox5;
+        
+        /// <summary>
+        /// question_seven control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList question_seven;
+        
+        /// <summary>
+        /// Textbox6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Textbox6;
     }
 }
