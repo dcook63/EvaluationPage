@@ -39,7 +39,41 @@ namespace MockupGUI
 
             //Clear Groups Dropdown List
             studentList.Items.Clear();
+            reviewerList.Items.Clear();
 
+            //Fill dd list for reviewees
+            try
+            {
+                string i = groupList.SelectedValue;
+                string query = @"SELECT 
+                                    FirstName, LastName
+                                From
+                                    Project_Assignment
+                                INNER JOIN
+                                    Student ON Student.Student_ID = Project_Assignment.Student_ID
+                                INNER JOIN
+                                    Project ON Project.Project_ID = Project_Assignment.Project_ID
+                                WHERE
+                                    Project.Project_No = " + i;
+                DataTable studenttable = new DataTable();
+                SqlDataAdapter studentdata = new SqlDataAdapter(query, con);
+                studentdata.Fill(studenttable);
+                studentList.DataSource = studenttable;
+                studentList.DataTextField = "FirstName";
+                studentList.DataValueField = "FirstName";
+                studentList.DataBind();
+
+                reviewerList.DataSource = studenttable;
+                reviewerList.DataTextField = "FirstName";
+                reviewerList.DataValueField = "FirstName";
+                reviewerList.DataBind();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            //Fill dd list for reviewer
             try
             {
                 string i = groupList.SelectedValue;
@@ -73,8 +107,8 @@ namespace MockupGUI
 
             SqlConnection con = new SqlConnection(@"Data Source=ITCapEvalVM;Initial Catalog=EvalDatabase;Integrated Security=True");
             con.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Presentation_Review (Poster, Poster_Comment, Teamtalk, Teamtalk_Comment, Slides, Slides_Comment, Presentation, Presentation_Comment, Deliverables, Deliverables_Comment, Softskills, Softskills_Comment, Overall) VALUES (@Poster, @Poster_Comment, @Teamtalk, @Teamtalk_Comment, @Slides, @Slides_Comment, @Presentation, @Presentation_Comment, @Deliverables, @Deliverables_Comment, @Softskills, @Softskills_Comment, @Overall)", con);
-            cmd.Parameters.AddWithValue("@Poster, @Poster_Comment, @Teamtalk, @Teamtalk_Comment, @Slides, @Slides_Comment, @Presentation, @Presentation_Comment, @Deliverables, @Deliverables_Comment, @Softskills, @Softskills_Comment, @Overall", _formData.Contribution);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Peer_Review (Contribution, Contribution_Comment, Communication, Communication_Comment, Teamwork, Teamwork_Comment, General, General_Comment, Overall, Overall_Comment) VALUES (@Contribution, @Contribution_Comment, @Communication, @Communication_Comment, @Teamwork, @Teamwork_Comment, @General, @General_Comment, @Overall, @Overall_Comment)", con);
+            cmd.Parameters.AddWithValue("@Contribution, @Contribution_Comment, @Communication, @Communication_Comment, @Teamwork, @Teamwork_Comment, @General, @General_Comment, @Overall, @Overall_Comment", _formData.Contribution);
             cmd.ExecuteNonQuery();
         }
     }

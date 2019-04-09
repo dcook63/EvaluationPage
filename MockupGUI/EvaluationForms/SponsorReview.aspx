@@ -67,7 +67,7 @@
             <%-- Table Section --%>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label runat="server" Text="Poster design: the quality and creativity of the poster, including style, layout, content, readability, media use, etc"></asp:Label>
+                    <asp:Label runat="server" Text="Clarity and quality of the final submissions: complete, well organized and explained, and on time."></asp:Label>
                 </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
@@ -98,7 +98,7 @@
             <%-- Question 2 --%>
                 <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label runat="server" Text="Team talk: how well does the team communicate with the audience?"></asp:Label>
+                    <asp:Label runat="server" Text="Quality of the solution and work to meet project goals: technical analysis, designs, system implementations, application development, research, documentation, etc."></asp:Label>
                 </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
@@ -129,7 +129,7 @@
             <%-- Question 3 --%>
               <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label runat="server" Text="Presentation slides and content: quality of presentation slides and content; covered major aspects of the project in a logical flow."></asp:Label>
+                    <asp:Label runat="server" Text="Communication and interaction:How well did the team communicate and interact with the project owner?"></asp:Label>
                 </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
@@ -160,7 +160,7 @@
             <%-- Question 4 --%>
               <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label runat="server" Text="Presentation skill and performance: how well did the team talk to the audience about the project and answer questions? Demonstrated confidence and enthusiasm."></asp:Label>
+                    <asp:Label runat="server" Text="Team energy and commitment: How do you perceive the energy and passion of the team? Was the team being proactive? Did they make commitment to project completion?"></asp:Label>
                 </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
@@ -191,7 +191,7 @@
             <%-- Question 5 --%>
               <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label runat="server" Text="Project goals and deliverables: completion of the project goals and deliverables; quality of the solution and work; application of appropriate technologies, practices, and methods. "></asp:Label>
+                    <asp:Label runat="server" Text="Project progress and management: To your knowledge, how well was the project planned, managed, and tracked? Was there any major delay?"></asp:Label>
                 </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
@@ -222,7 +222,7 @@
             <%-- Question 6 --%>
               <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label runat="server" Text="Soft skills: demonstrated good project experiences related to soft skills, including communication, team work, dealing with challenges, learning, research, documentation, project management, etc."></asp:Label>
+                    <asp:Label runat="server" Text="Your overall evaluation of your team of their work:"></asp:Label>
                 </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
@@ -250,41 +250,8 @@
             </asp:TableRow>
             <asp:TableRow Height="25"></asp:TableRow>
 
-            <%-- Question 7 --%>
-              <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label runat="server" Text="What is your overall evaluation score of this project?"></asp:Label>
-                </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                <asp:TableCell>
-                    <%-- Radio Button List --%>
-                    <asp:RadioButtonList runat="server" id="question_seven" RepeatDirection="Horizontal">
-                        <asp:ListItem>1</asp:ListItem>
-                        <asp:ListItem>2</asp:ListItem>
-                        <asp:ListItem>3</asp:ListItem>
-                        <asp:ListItem>4</asp:ListItem>
-                        <asp:ListItem>5</asp:ListItem>
-                        <asp:ListItem>6</asp:ListItem>
-                        <asp:ListItem>7</asp:ListItem>
-                        <asp:ListItem>8</asp:ListItem>
-                        <asp:ListItem>9</asp:ListItem>
-                        <asp:ListItem>10</asp:ListItem>
-                    </asp:RadioButtonList>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow Height="15px"></asp:TableRow>
-            <asp:TableRow height="75px">
-                <asp:TableCell Width="100%" height="75px">
-                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="Textbox6"></asp:textbox>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow Height="25"></asp:TableRow>
-
-
+         
             <%-- End of Questions --%>
-
-            <%-- It is a good idea to section off different areas to keep track of what controls what --%>
             <asp:TableRow>
                 <asp:TableCell>
                     <button>Submit</button>
