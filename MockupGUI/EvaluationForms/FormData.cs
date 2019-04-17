@@ -7,6 +7,33 @@ namespace MockupGUI
 {
     public class FormData
     {
+        //Student Info
+        public string _Student;
+        public string Student
+        {
+            get
+            {
+                return _Student;
+            }
+            set
+            {
+                _Student = value;
+            }
+        }
+        public int _Student_ID;
+        public int Student_ID
+        {
+            get
+            {
+                return _Student_ID;
+            }
+            set
+            {
+                _Student_ID = value;
+            }
+        }
+
+
         //Peer Review
         public int _Contribution;
         public int Contribution
@@ -290,8 +317,8 @@ namespace MockupGUI
 
         public void FillPeerData(int cont, string cont_com, int comm, string comm_com, int team, string team_com, int gen, string gen_com, int ovr, string ovr_com)
         {
-            Overall_Peer = cont;
-            Overall_Peer_Comment = cont_com;
+            Contribution = cont;
+            Contribution_Comment = cont_com;
             Communication = comm;
             Communication_Comment = comm_com;
             Teamwork = team;

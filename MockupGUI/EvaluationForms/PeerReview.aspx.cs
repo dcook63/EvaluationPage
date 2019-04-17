@@ -38,7 +38,7 @@ namespace MockupGUI
             }
 
             //Clear Groups Dropdown List
-            studentList.Items.Clear();
+            revieweeList.Items.Clear();
             reviewerList.Items.Clear();
 
             //Fill dd list for reviewees
@@ -58,10 +58,10 @@ namespace MockupGUI
                 DataTable studenttable = new DataTable();
                 SqlDataAdapter studentdata = new SqlDataAdapter(query, con);
                 studentdata.Fill(studenttable);
-                studentList.DataSource = studenttable;
-                studentList.DataTextField = "FirstName";
-                studentList.DataValueField = "FirstName";
-                studentList.DataBind();
+                revieweeList.DataSource = studenttable;
+                revieweeList.DataTextField = "FirstName";
+                revieweeList.DataValueField = "FirstName";
+                revieweeList.DataBind();
 
                 reviewerList.DataSource = studenttable;
                 reviewerList.DataTextField = "FirstName";
@@ -90,10 +90,10 @@ namespace MockupGUI
                 DataTable studenttable = new DataTable();
                 SqlDataAdapter studentdata = new SqlDataAdapter(query, con);
                 studentdata.Fill(studenttable);
-                studentList.DataSource = studenttable;
-                studentList.DataTextField = "FirstName";
-                studentList.DataValueField = "FirstName";
-                studentList.DataBind();
+                revieweeList.DataSource = studenttable;
+                revieweeList.DataTextField = "FirstName";
+                revieweeList.DataValueField = "FirstName";
+                revieweeList.DataBind();
             }
             catch (Exception ex)
             {
@@ -103,13 +103,30 @@ namespace MockupGUI
         //Method is linked to .aspx button. Look for "OnClick" in .aspx file to see link
         protected void SubmitForm(object sender, EventArgs e)
         {
-            FormData _formData = new FormData(); //Use this class to store variables obtained from Web Form
+            //Get Student ID from Student
+
+            FormData _formData = new FormData(); //Use this class to store variables obtained from Web 
+            _formData.FillPeerData(question_one.SelectedIndex + 1, commentBox1.Text, question_two.SelectedIndex + 1, commentBox2.Text, question_three.SelectedIndex + 1, commentBox3.Text, question_four.SelectedIndex + 1, commentBox4.Text, question_five.SelectedIndex + 1, commentBox5.Text);
+            FormData Reviewee = new FormData();
+            Reviewee.Student = revieweeList.Text;
+            FormData Reviewer = new FormData();
+            Reviewer.Student = reviewerList.Text;
 
             SqlConnection con = new SqlConnection(@"Data Source=ITCapEvalVM;Initial Catalog=EvalDatabase;Integrated Security=True");
             con.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Peer_Review (Contribution, Contribution_Comment, Communication, Communication_Comment, Teamwork, Teamwork_Comment, General, General_Comment, Overall, Overall_Comment) VALUES (@Contribution, @Contribution_Comment, @Communication, @Communication_Comment, @Teamwork, @Teamwork_Comment, @General, @General_Comment, @Overall, @Overall_Comment)", con);
-            cmd.Parameters.AddWithValue("@Contribution, @Contribution_Comment, @Communication, @Communication_Comment, @Teamwork, @Teamwork_Comment, @General, @General_Comment, @Overall, @Overall_Comment", _formData.Contribution);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Peer_Review (Contribution,Contribution_Comment,Communication,Communication_Comment,Teamwork,Teamwork_Comment,General,General_Comment,Overall,Overall_Comment) VALUES (@Contribution,@Contribution_Comment,@Communication,@Communication_Comment,@Teamwork,@Teamwork_Comment,@General,@General_Comment,@Overall,@Overall_Comment)", con);
+            cmd.Parameters.AddWithValue("@Contribution", _formData.Contribution);
+            cmd.Parameters.AddWithValue("@Contribution_Comment", _formData.Contribution_Comment);
+            cmd.Parameters.AddWithValue("@Communication", _formData.Communication);
+            cmd.Parameters.AddWithValue("@Communication_Comment", _formData.Communication_Comment);
+            cmd.Parameters.AddWithValue("@Teamwork", _formData.Teamwork);
+            cmd.Parameters.AddWithValue("@Teamwork_Comment", _formData.Teamwork_Comment);
+            cmd.Parameters.AddWithValue("@General", _formData.General);
+            cmd.Parameters.AddWithValue("@General_Comment", _formData.General_Comment);
+            cmd.Parameters.AddWithValue("@Overall", _formData.Overall_Peer);
+            cmd.Parameters.AddWithValue("@Overall_Comment", _formData.Overall_Peer_Comment);
             cmd.ExecuteNonQuery();
+            con.Close();
         }
     }
 }

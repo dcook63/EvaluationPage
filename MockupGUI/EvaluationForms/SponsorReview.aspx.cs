@@ -74,7 +74,7 @@ namespace MockupGUI
             SqlConnection con = new SqlConnection(@"Data Source=ITCapEvalVM;Initial Catalog=EvalDatabase;Integrated Security=True");
             con.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO Presentation_Review (Poster, Poster_Comment, Teamtalk, Teamtalk_Comment, Slides, Slides_Comment, Presentation, Presentation_Comment, Deliverables, Deliverables_Comment, Softskills, Softskills_Comment, Overall) VALUES (@Poster, @Poster_Comment, @Teamtalk, @Teamtalk_Comment, @Slides, @Slides_Comment, @Presentation, @Presentation_Comment, @Deliverables, @Deliverables_Comment, @Softskills, @Softskills_Comment, @Overall)", con);
-            cmd.Parameters.AddWithValue("@Poster, @Poster_Comment, @Teamtalk, @Teamtalk_Comment, @Slides, @Slides_Comment, @Presentation, @Presentation_Comment, @Deliverables, @Deliverables_Comment, @Softskills, @Softskills_Comment, @Overall", _formData.Contribution);
+            cmd.Parameters.AddWithValue("@Poster, @Poster_Comment, @Teamtalk, @Teamtalk_Comment, @Slides, @Slides_Comment, @Presentation, @Presentation_Comment, @Deliverables, @Deliverables_Comment, @Softskills, @Softskills_Comment, @Overall", con);
             cmd.ExecuteNonQuery();
         }
     }
