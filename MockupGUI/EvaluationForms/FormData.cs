@@ -32,6 +32,31 @@ namespace MockupGUI
                 _Student_ID = value;
             }
         }
+        public string _Project_ID;
+        public string Project_ID
+        {
+            get
+            {
+                return _Project_ID;
+            }
+            set
+            {
+                _Project_ID = value;
+            }
+        }
+
+        public string _Sponsor_ID;
+        public string Sponsor_ID
+        {
+            get
+            {
+                return _Sponsor_ID;
+            }
+            set
+            {
+                _Sponsor_ID = value;
+            }
+        }
 
 
         //Peer Review
@@ -314,6 +339,227 @@ namespace MockupGUI
             }
         }
 
+        //Sponsor_Eval
+        public int _Clarity;
+        public int Clarity
+        {
+            get
+            {
+                return _Clarity;
+            }
+            set
+            {
+                _Clarity = value;
+            }
+        }
+
+        public string _Clarity_Comment;
+        public string Clarity_Comment
+        {
+            get
+            {
+                return _Clarity_Comment;
+            }
+            set
+            {
+                _Clarity_Comment = value;
+            }
+        }
+
+        public int _Quality;
+        public int Quality
+        {
+            get
+            {
+                return _Quality;
+            }
+            set
+            {
+                _Quality = value;
+            }
+        }
+
+        public string _Quality_Comment;
+        public string Quality_Comment
+        {
+            get
+            {
+                return _Quality_Comment;
+            }
+            set
+            {
+                _Quality_Comment = value;
+            }
+        }
+
+        public int _Sponsor_Communication;
+        public int Sponsor_Communication
+        {
+            get
+            {
+                return _Sponsor_Communication;
+            }
+            set
+            {
+                _Sponsor_Communication = value;
+            }
+        }
+
+        public string _Sponsor_Communication_Comment;
+        public string Sponsor_Communication_Comment
+        {
+            get
+            {
+                return _Sponsor_Communication_Comment;
+            }
+            set
+            {
+                _Sponsor_Communication_Comment = value;
+            }
+        }
+
+        public int _Commitment;
+        public int Commitment
+        {
+            get
+            {
+                return _Commitment;
+            }
+            set
+            {
+                _Commitment = value;
+            }
+        }
+
+        public string _Commitment_Comment;
+        public string Commitment_Comment
+        {
+            get
+            {
+                return _Commitment_Comment;
+            }
+            set
+            {
+                _Commitment_Comment = value;
+            }
+        }
+
+        public int _Management;
+        public int Management
+        {
+            get
+            {
+                return _Management;
+            }
+            set
+            {
+                _Management = value;
+            }
+        }
+
+        public string _Management_Comment;
+        public string Management_Comment
+        {
+            get
+            {
+                return _Management_Comment;
+            }
+            set
+            {
+                _Management_Comment = value;
+            }
+        }
+
+        public int _Overall;
+        public int Overall
+        {
+            get
+            {
+                return _Overall;
+            }
+            set
+            {
+                _Overall = value;
+            }
+        }
+
+        public string _Overall_Comment;
+        public string Overall_Comment
+        {
+            get
+            {
+                return _Overall_Comment;
+            }
+            set
+            {
+                _Overall_Comment = value;
+            }
+        }
+
+        public string _Comment_on_Deliverables;
+        public string Comment_on_Deliverables
+        {
+            get
+            {
+                return _Comment_on_Deliverables;
+            }
+            set
+            {
+                _Comment_on_Deliverables = value;
+            }
+        }
+
+        public string _Comment_on_Team;
+        public string Comment_on_Team
+        {
+            get
+            {
+                return _Comment_on_Team;
+            }
+            set
+            {
+                _Comment_on_Team = value;
+            }
+        }
+
+        public string _Feedback_on_Improvements;
+        public string Feedback_on_Improvements
+        {
+            get
+            {
+                return _Feedback_on_Improvements;
+            }
+            set
+            {
+                _Feedback_on_Improvements = value;
+            }
+        }
+
+        public string _Value_to_Organization;
+        public string Value_to_Organization
+        {
+            get
+            {
+                return _Value_to_Organization;
+            }
+            set
+            {
+                _Value_to_Organization = value;
+            }
+        }
+
+        public string _Comment_on_Capstone;
+        public string Comment_on_Capstone
+        {
+            get
+            {
+                return _Comment_on_Capstone;
+            }
+            set
+            {
+                _Comment_on_Capstone = value;
+            }
+        }
 
         public void FillPeerData(int cont, string cont_com, int comm, string comm_com, int team, string team_com, int gen, string gen_com, int ovr, string ovr_com)
         {
@@ -327,6 +573,27 @@ namespace MockupGUI
             General_Comment = gen_com;
             Overall_Peer = ovr;
             Overall_Peer_Comment = ovr_com;
+        }
+
+        public void FillSponsorData(int clar, string clar_com, int qual, string qual_com, int comm, string comm_com, int commit, string commit_com, int mana, string mana_com, int ovr, string ovr_com, string COD, string COT, string FOI, string VTO, string COC)
+        {
+            Clarity = clar;
+            Clarity_Comment = clar_com;
+            Quality = qual;
+            Quality_Comment = qual_com;
+            Communication = comm;
+            Communication_Comment = comm_com;
+            Commitment = commit;
+            Commitment_Comment = commit_com;
+            Management = mana;
+            Management_Comment = mana_com;
+            Overall = ovr;
+            Overall_Comment = ovr_com;
+            Comment_on_Deliverables = COD;
+            Comment_on_Team = COT;
+            Feedback_on_Improvements = FOI;
+            Value_to_Organization = VTO;
+            Comment_on_Capstone = COC;
         }
     }
 }

@@ -87,20 +87,15 @@ namespace MockupGUI
                     scLabel.Text = ("Scores For Sponsor Evaluation");
                     searchup.Text = ("Sort by Group");
 
-                    BoundField description = new BoundField();
-                    description.ItemStyle.Width = 100;
-                    description.DataField = "Description";
-                    description.HeaderText = "Description";
-
                     BoundField firstName = new BoundField();
                     firstName.ItemStyle.Width = 100;
                     firstName.DataField = "FirstName";
-                    firstName.HeaderText = "First Name";
+                    firstName.HeaderText = "Sponsor First Name";
 
                     BoundField lastName = new BoundField();
                     lastName.ItemStyle.Width = 100;
                     lastName.DataField = "LastName";
-                    lastName.HeaderText = "Last Name";
+                    lastName.HeaderText = "Sponsor Last Name";
 
                     BoundField clarity = new BoundField();
                     clarity.ItemStyle.Width = 100;
@@ -132,7 +127,6 @@ namespace MockupGUI
                     overall.DataField = "Overall";
                     overall.HeaderText = "Overall";
 
-                    groups.Columns.Add(description);
                     groups.Columns.Add(firstName);
                     groups.Columns.Add(lastName);
                     groups.Columns.Add(clarity);
@@ -212,11 +206,11 @@ namespace MockupGUI
                         //Clear Groups Dropdown List
                         groupList.Items.Clear();
                         DataTable grouptable = new DataTable();
-                        SqlDataAdapter groupdata = new SqlDataAdapter("SELECT Description FROM Project", con);
+                        SqlDataAdapter groupdata = new SqlDataAdapter("SELECT Title FROM Project", con);
                         groupdata.Fill(grouptable);
                         groupList.DataSource = grouptable;
-                        groupList.DataTextField = "Description";
-                        groupList.DataValueField = "Description";
+                        groupList.DataTextField = "Title";
+                        groupList.DataValueField = "Title";
                         
                         groupList.DataBind();
                         groupList.Items.Insert(0, new ListItem("All", "Default value"));
@@ -306,37 +300,29 @@ namespace MockupGUI
             {
                 query =
                     @"SELECT 
-	                            Project.Description, FirstName, LastName, Poster, Teamtalk, Slides, Deliverables, Softskills, Overall
-		                            From 
-	                            Presentation_Eval
-		                            INNER JOIN
-	                            Project_Assignment
-		                            ON
-	                            Presentation_Eval.Project_ID = Project_Assignment.Project_ID
-		                            INNER JOIN
-	                            Project
-		                            ON
-	                            Project_Assignment.Project_ID = Project.Project_ID";
+	                    Project.Description, FirstName, LastName, Poster, Teamtalk, Slides, Deliverables, Softskills, Overall
+		                    From 
+	                    Presentation_Eval
+		                    INNER JOIN
+	                    Project_Assignment
+		                    ON
+	                    Presentation_Eval.Project_ID = Project_Assignment.Project_ID
+		                    INNER JOIN
+	                    Project
+		                    ON
+	                    Project_Assignment.Project_ID = Project.Project_ID";
             }
             if (form == "Sponsor_Eval")
             {
                 query =
-                    @"SELECT 
-	                            Project.Description, Project_Sponsor.FirstName, Project_Sponsor.LastName, Clarity, Quality, Communication, Commitment, Management, Overall
-		                            From 
-	                            Sponsor_Eval
-		                            INNER JOIN
-	                            Project_Assignment
-		                            ON
-	                            Sponsor_Eval.Project_ID = Project_Assignment.Project_ID
-		                            INNER JOIN
-	                            Project
-		                            ON
-	                            Project_Assignment.Project_ID = Project.Project_ID
-		                            INNER JOIN
-	                            Project_Sponsor
-		                            ON
-	                            Sponsor_Eval.Sponsor_ID = Project_Sponsor.Sponsor_ID";
+                    @"SELECT
+		                    Project_Sponsor.FirstName, Project_Sponsor.LastName, Clarity, Quality, Communication, Commitment, Management, Overall
+	                    FROM
+		                    Sponsor_Eval
+	                    INNER JOIN
+		                    Project on Sponsor_Eval.Project_ID = Project.Project_ID
+	                    INNER JOIN
+		                    Project_Sponsor on Sponsor_Eval.Sponsor_ID = Project_Sponsor.Sponsor_ID";
             }
             return query;
         }

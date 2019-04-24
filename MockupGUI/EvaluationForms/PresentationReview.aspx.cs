@@ -53,10 +53,10 @@ namespace MockupGUI
                                     Project ON Project.Project_ID = Project_Assignment.Project_ID
                                 WHERE
                                     Project.Project_No = " + i;
-                DataTable studenttable = new DataTable();
+                DataTable revieweeTable = new DataTable();
                 SqlDataAdapter studentdata = new SqlDataAdapter(query, con);
-                studentdata.Fill(studenttable);
-                studentList.DataSource = studenttable;
+                studentdata.Fill(revieweeTable);
+                studentList.DataSource = revieweeTable;
                 studentList.DataTextField = "FirstName";
                 studentList.DataValueField = "FirstName";
                 studentList.DataBind();

@@ -25,7 +25,7 @@
                         <a href="#!">Evaluation Form</a>
                         <ul class="nav-dropdown">
                             <li><a href="SponsorReview.aspx">Sponsor Evaluation</a></li>
-                            <li><a href="PeerEvaluation.aspx">Peer Evaluation</a></li>
+                            <li><a href="PeerReview.aspx">Peer Evaluation</a></li>
                             <li><a href="PresentationReview.aspx">Presentation Evaluation</a></li>
                             <li><a href="#!">Evaluation Report</a></li>
                         </ul>

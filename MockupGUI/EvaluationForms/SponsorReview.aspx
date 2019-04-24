@@ -50,11 +50,6 @@
         <div style="margin: 50px; align-content: center">
             <asp:Label runat="server" ID="searchup" Text="Search For Group"></asp:Label>
             <asp:DropDownList runat="server" ID="groupList" style="margin-right:15px; margin-left:10px" AutoPostBack="true"></asp:DropDownList>
-            <asp:Label runat="server" ID="searchup2" Text="Search For Student"></asp:Label>
-            <asp:DropDownList runat="server" ID="studentList" style="margin-right:15px; margin-left:10px" AutoPostBack="true"></asp:DropDownList>
-            <div style="margin:10px; margin-left:0px">
-                <asp:Label runat="server" ID="scLabel" autopostback="true"></asp:Label>
-            </div>
             <div style="margin-top:10px">
                 <asp:GridView runat="server" ID="groups" AlternatingRowStyle-BackColor="white" HeaderStyle-BorderWidth="2px" 
                     HeaderStyle-BorderColor="black" HeaderStyle-BackColor="#feba18" AutoGenerateColumns="false" RowStyle-HorizontalAlign="Center">
@@ -121,7 +116,7 @@
             <asp:TableRow Height="15px"></asp:TableRow>
             <asp:TableRow height="75px">
                 <asp:TableCell Width="100%" height="75px">
-                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="Textbox1"></asp:textbox>
+                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="commentBox2"></asp:textbox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow Height="25"></asp:TableRow>
@@ -152,7 +147,7 @@
             <asp:TableRow Height="15px"></asp:TableRow>
             <asp:TableRow height="75px">
                 <asp:TableCell Width="100%" height="75px">
-                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="Textbox2"></asp:textbox>
+                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="commentBox3"></asp:textbox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow Height="25"></asp:TableRow>
@@ -183,7 +178,7 @@
             <asp:TableRow Height="15px"></asp:TableRow>
             <asp:TableRow height="75px">
                 <asp:TableCell Width="100%" height="75px">
-                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="Textbox3"></asp:textbox>
+                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="commentBox4"></asp:textbox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow Height="25"></asp:TableRow>
@@ -214,7 +209,7 @@
             <asp:TableRow Height="15px"></asp:TableRow>
             <asp:TableRow height="75px">
                 <asp:TableCell Width="100%" height="75px">
-                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="Textbox4"></asp:textbox>
+                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="commentBox5"></asp:textbox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow Height="25"></asp:TableRow>
@@ -245,7 +240,77 @@
             <asp:TableRow Height="15px"></asp:TableRow>
             <asp:TableRow height="75px">
                 <asp:TableCell Width="100%" height="75px">
-                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="Textbox5"></asp:textbox>
+                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="commentBox6"></asp:textbox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow Height="25"></asp:TableRow>
+
+            <%-- Question 7 --%>
+              <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label runat="server" Text="Please comment on any observed excellence of the project in terms of deliverables."></asp:Label>
+                </asp:TableCell>
+                </asp:TableRow>
+            <asp:TableRow Height="15px"></asp:TableRow>
+            <asp:TableRow height="75px">
+                <asp:TableCell Width="100%" height="75px">
+                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="commentBox7"></asp:textbox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow Height="25"></asp:TableRow>
+
+            <%-- Question 8 --%>
+              <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label runat="server" Text="Please comment on any observed excellence of the team (students). Please also share your feedback on any individual student who is particularly outstanding or impressive."></asp:Label>
+                </asp:TableCell>
+                </asp:TableRow>
+            <asp:TableRow Height="15px"></asp:TableRow>
+            <asp:TableRow height="75px">
+                <asp:TableCell Width="100%" height="75px">
+                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="commentBox8"></asp:textbox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow Height="25"></asp:TableRow>
+
+            <%-- Question 9 --%>
+              <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label runat="server" Text="Please provide some feedback on things that could be improved for the team and their work."></asp:Label>
+                </asp:TableCell>
+                </asp:TableRow>
+            <asp:TableRow Height="15px"></asp:TableRow>
+            <asp:TableRow height="75px">
+                <asp:TableCell Width="100%" height="75px">
+                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="commentBox9"></asp:textbox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow Height="25"></asp:TableRow>
+
+            <%-- Question 10 --%>
+              <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label runat="server" Text="Do you see any value or benefit that this project will bring to you or your organization?"></asp:Label>
+                </asp:TableCell>
+                </asp:TableRow>
+            <asp:TableRow Height="15px"></asp:TableRow>
+            <asp:TableRow height="75px">
+                <asp:TableCell Width="100%" height="75px">
+                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="commentBox10"></asp:textbox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow Height="25"></asp:TableRow>
+
+            <%-- Question 11 --%>
+              <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label runat="server" Text="Please share any other comment about this IT capstone project or this capstone course. Thank you!"></asp:Label>
+                </asp:TableCell>
+                </asp:TableRow>
+            <asp:TableRow Height="15px"></asp:TableRow>
+            <asp:TableRow height="75px">
+                <asp:TableCell Width="100%" height="75px">
+                    <asp:textbox runat="server" height="75px" width="100%" Placeholder="Comment..." Font-Size="Small" TextMode="MultiLine" ID="commentBox11"></asp:textbox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow Height="25"></asp:TableRow>
@@ -254,7 +319,7 @@
             <%-- End of Questions --%>
             <asp:TableRow>
                 <asp:TableCell>
-                    <button>Submit</button>
+                    <button runat="server" onserverclick="SubmitForm" type="button">Submit</button>
                 </asp:TableCell>
             </asp:TableRow>
 
