@@ -18,7 +18,14 @@ namespace MockupGUI
             {
                 con.Open();
                 string form = FormSelect.SelectedItem.Text;
-                groups.Columns.Clear();
+
+                int count = groups.Columns.Count;
+                while(count > 1)
+                {
+                    groups.Columns.RemoveAt(count - 1);
+                    --count;
+                }
+
                 if (form == "Peer Evaluation")
                 {
                     form = "Peer_Review";
@@ -143,10 +150,10 @@ namespace MockupGUI
                     scLabel.Text = ("Scores For Presentation Evaluation");
                     searchup.Text = ("Sort by Group");
 
-                    BoundField description = new BoundField();
-                    description.ItemStyle.Width = 100;
-                    description.DataField = "Description";
-                    description.HeaderText = "Description";
+                    BoundField title = new BoundField();
+                    title.ItemStyle.Width = 100;
+                    title.DataField = "Title";
+                    title.HeaderText = "Title";
 
                     BoundField firstName = new BoundField();
                     firstName.ItemStyle.Width = 100;
@@ -157,6 +164,11 @@ namespace MockupGUI
                     lastName.ItemStyle.Width = 100;
                     lastName.DataField = "LastName";
                     lastName.HeaderText = "Last Name";
+
+                    BoundField role = new BoundField();
+                    role.ItemStyle.Width = 100;
+                    role.DataField = "Role";
+                    role.HeaderText = "Role";
 
                     BoundField poster = new BoundField();
                     poster.ItemStyle.Width = 100;
@@ -188,7 +200,8 @@ namespace MockupGUI
                     overall.DataField = "Overall";
                     overall.HeaderText = "Overall";
 
-                    groups.Columns.Add(description);
+                    groups.Columns.Add(title);
+                    groups.Columns.Add(role);
                     groups.Columns.Add(firstName);
                     groups.Columns.Add(lastName);
                     groups.Columns.Add(poster);
@@ -296,11 +309,11 @@ namespace MockupGUI
 		                            WHERE
 	                            Project.Project_No = +" + groupList.SelectedIndex;
             }
-            if (form == "Presentation_Eval")
+            if (form == "Presentation_Eval" && groupList.SelectedIndex == 0)
             {
                 query =
                     @"SELECT 
-	                    Project.Description, FirstName, LastName, Poster, Teamtalk, Slides, Deliverables, Softskills, Overall
+	                    Project.Title, FirstName, LastName, Role, Poster, Teamtalk, Slides, Deliverables, Softskills, Overall
 		                    From 
 	                    Presentation_Eval
 		                    INNER JOIN
@@ -312,17 +325,49 @@ namespace MockupGUI
 		                    ON
 	                    Project_Assignment.Project_ID = Project.Project_ID";
             }
-            if (form == "Sponsor_Eval")
+            else if(form == "Presentation_Eval")
+            {
+                query =
+                    @"SELECT 
+	                    Project.Title, FirstName, LastName, Role, Poster, Teamtalk, Slides, Deliverables, Softskills, Overall
+		                    From 
+	                    Presentation_Eval
+		                    INNER JOIN
+	                    Project_Assignment
+		                    ON
+	                    Presentation_Eval.Project_ID = Project_Assignment.Project_ID
+		                    INNER JOIN
+	                    Project
+		                    ON
+	                    Project_Assignment.Project_ID = Project.Project_ID
+                            WHERE
+	                    Project.Project_No = +" + groupList.SelectedIndex;
+            }
+            if (form == "Sponsor_Eval" && groupList.SelectedIndex == 0)
             {
                 query =
                     @"SELECT
-		                    Project_Sponsor.FirstName, Project_Sponsor.LastName, Clarity, Quality, Communication, Commitment, Management, Overall
-	                    FROM
-		                    Sponsor_Eval
-	                    INNER JOIN
-		                    Project on Sponsor_Eval.Project_ID = Project.Project_ID
-	                    INNER JOIN
-		                    Project_Sponsor on Sponsor_Eval.Sponsor_ID = Project_Sponsor.Sponsor_ID";
+		                Project_Sponsor.FirstName, Project_Sponsor.LastName, Clarity, Quality, Communication, Commitment, Management, Overall
+	                        FROM
+		                Sponsor_Eval
+	                        INNER JOIN
+		                Project on Sponsor_Eval.Project_ID = Project.Project_ID
+	                        INNER JOIN
+		                Project_Sponsor on Sponsor_Eval.Sponsor_ID = Project_Sponsor.Sponsor_ID";
+            }
+            else if (form == "Sponsor_Eval")
+            {
+                query =
+                    @"SELECT
+		                Project_Sponsor.FirstName, Project_Sponsor.LastName, Clarity, Quality, Communication, Commitment, Management, Overall
+	                        FROM
+		                Sponsor_Eval
+	                        INNER JOIN
+		                Project on Sponsor_Eval.Project_ID = Project.Project_ID
+	                        INNER JOIN
+		                Project_Sponsor on Sponsor_Eval.Sponsor_ID = Project_Sponsor.Sponsor_ID
+                            WHERE
+	                    Project.Project_No = +" + groupList.SelectedIndex;
             }
             return query;
         }

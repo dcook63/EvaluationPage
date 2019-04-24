@@ -20,6 +20,18 @@ namespace MockupGUI
                 _Student = value;
             }
         }
+        public string _Role;
+        public string Role
+        {
+            get
+            {
+                return _Role;
+            }
+            set
+            {
+                _Role = value;
+            }
+        }
         public int _Student_ID;
         public int Student_ID
         {
@@ -338,6 +350,54 @@ namespace MockupGUI
                 _Overall_Pres = value;
             }
         }
+        public string _Comment_on_Excellence;
+        public string Comment_on_Excellence
+        {
+            get
+            {
+                return _Comment_on_Excellence;
+            }
+            set
+            {
+                _Comment_on_Excellence = value;
+            }
+        }
+        public string _Comment_on_Weakness;
+        public string Comment_on_Weakness
+        {
+            get
+            {
+                return _Comment_on_Weakness;
+            }
+            set
+            {
+                _Comment_on_Weakness = value;
+            }
+        }
+        public string _Comment_on_website;
+        public string Comment_on_website
+        {
+            get
+            {
+                return _Comment_on_website;
+            }
+            set
+            {
+                _Comment_on_website = value;
+            }
+        }
+        public string _Comment_on_Improvements;
+        public string Comment_on_Improvements
+        {
+            get
+            {
+                return _Comment_on_Improvements;
+            }
+            set
+            {
+                _Comment_on_Improvements = value;
+            }
+        }
 
         //Sponsor_Eval
         public int _Clarity;
@@ -594,6 +654,27 @@ namespace MockupGUI
             Feedback_on_Improvements = FOI;
             Value_to_Organization = VTO;
             Comment_on_Capstone = COC;
+        }
+
+        public void FillPresentationData(int poster, string poster_com, int ttalk, string ttalk_com, int slide, string slide_com, int pres, string pres_com, int deliv, string deliv_com, int sskill, string sskill_com, int ovr, string COE, string COW, string COWeb, string COI)
+        {
+            Poster = poster;
+            Poster_Comment = poster_com;
+            Teamtalk = ttalk;
+            Teamtalk_Comment = ttalk_com;
+            Slides = slide;
+            Slides_Comment = slide_com;
+            Presentation = pres;
+            Presentation_Comment = pres_com;
+            Deliverables = deliv;
+            Deliverables_Comment = deliv_com;
+            Softskills = sskill;
+            Softskills_Comment = sskill_com;
+            Overall = ovr;
+            Comment_on_Excellence = COE;
+            Comment_on_Weakness = COW;
+            Comment_on_website = COWeb;
+            Comment_on_Improvements = COI;
         }
     }
 }
