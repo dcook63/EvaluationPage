@@ -24,11 +24,12 @@ namespace MockupGUI
                     //Clear Groups Dropdown List
                     grouptable = new DataTable();
                     string query = @"SELECT 
-		                                Title, Project_No, Project.Sponsor_ID, Sponsor_Eval.Project_ID
-	                                From
-		                                Project
-	                                INNER JOIN
-		                                Sponsor_Eval ON Project.Project_ID = Sponsor_Eval.Project_ID";
+		                                    Title, Project_No, Project.Sponsor_ID, Project.Project_ID
+	                                    From
+		                                    Project
+	                                    INNER JOIN
+		                                    Project_Sponsor ON Project.Sponsor_ID = Project_Sponsor.Sponsor_ID
+";
 
                     SqlDataAdapter groupdata = new SqlDataAdapter(query, con);
                     groupdata.Fill(grouptable);
@@ -50,11 +51,11 @@ namespace MockupGUI
             con.Open();
             grouptable = new DataTable();
             string query = @"SELECT 
-		                        Title, Project_No, Project.Sponsor_ID, Sponsor_Eval.Project_ID
-	                        From
-		                        Project
-	                        INNER JOIN
-		                        Sponsor_Eval ON Project.Project_ID = Sponsor_Eval.Project_ID";
+		                            Title, Project_No, Project.Sponsor_ID, Project.Project_ID
+	                            From
+		                            Project
+	                            INNER JOIN
+		                            Project_Sponsor ON Project.Sponsor_ID = Project_Sponsor.Sponsor_ID";
 
             SqlDataAdapter groupdata = new SqlDataAdapter(query, con);
             groupdata.Fill(grouptable);
@@ -63,7 +64,7 @@ namespace MockupGUI
             _formData.FillSponsorData(question_one.SelectedIndex+1, commentBox1.Text, question_two.SelectedIndex+1, commentBox2.Text, question_three.SelectedIndex + 1, commentBox3.Text, question_four.SelectedIndex + 1, commentBox4.Text, question_five.SelectedIndex + 1, commentBox5.Text, question_six.SelectedIndex + 1, commentBox6.Text, commentBox7.Text, commentBox8.Text, commentBox9.Text, commentBox10.Text, commentBox11.Text);
             _formData.Sponsor_ID = grouptable.Rows[groupList.SelectedIndex]["Sponsor_ID"].ToString();
             _formData.Project_ID = grouptable.Rows[groupList.SelectedIndex]["Project_ID"].ToString();
-            
+            MessageBox.Show(_formData.Sponsor_ID + ' ' + _formData.Project_ID);
             SqlCommand cmd = new SqlCommand("INSERT INTO Sponsor_Eval (Sponsor_ID,Project_ID,Clarity, Clarity_Comment, Quality, Quality_Comment, Communication, Communication_Comment, Commitment, Commitment_Comment, Management, Management_Comment, Overall, Overall_Comment, Comment_on_Deliverables, Comment_on_Team,Feedback_on_Improvements,Value_to_Organization,Comment_on_Capstone) VALUES (@Sponsor_ID,@Project_ID,@Clarity, @Clarity_Comment, @Quality, @Quality_Comment, @Communication, @Communication_Comment, @Commitment, @Commitment_Comment, @Management,@Management_Comment, @Overall, @Overall_Comment, @Comment_on_Deliverables, @Comment_on_Team,@Feedback_on_Improvements,@Value_to_Organization,@Comment_on_Capstone)", con);
             cmd.Parameters.AddWithValue("@Sponsor_ID", _formData.Sponsor_ID);
             cmd.Parameters.AddWithValue("@Project_ID", _formData.Project_ID);

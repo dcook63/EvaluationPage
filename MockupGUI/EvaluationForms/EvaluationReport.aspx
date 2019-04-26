@@ -43,17 +43,15 @@
   </section>
 
     <!-- Main -->
-    <section class="main" style="height:40px">
-    <div class="margin" style="text-align: center;">
+    <div style="padding-bottom: 80px" class="container">
+
         <br />
         <asp:Table runat="server">
             <asp:TableRow>
                 <asp:TableCell>
                     <asp:Label runat="server" Text="Select which form to report"></asp:Label>
                 </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
-                <asp:TableCell>
+                <asp:TableCell style="padding-left: 15px">
                     <asp:DropDownList runat="server" ID="FormSelect" OnSelectedIndexChanged="EvalReportSelect" AutoPostBack="true">
                         <asp:ListItem>Peer Evaluation</asp:ListItem>
                         <asp:ListItem>Presentation Evaluation</asp:ListItem>
@@ -63,45 +61,19 @@
             </asp:TableRow>
         </asp:Table>
         <br />
-    </div>
-    </section>
 
-    <script type="text/javascript">
-        function toggle-details(btn, row) {
-            var current = $('#' + row).css('display');
-            if (current == 'none') {
-                $('#' + row).show();
-                $(btn).removeClass('glyphicon-plus')
-                $(btn).addClass('glyphicon-minus')
-            } else {
-                $('#' + row).hide();
-                $(btn).removeClass('glyphicon-minus')
-                $(btn).addClass('glyphicon-plus')
-            }
-            return false;
-        }
-    </script>
-
-    <div style="margin: 50px; align-content: center">
         <asp:Label runat="server" ID="searchup"></asp:Label>
         <asp:DropDownList runat="server" ID="groupList" style="margin-right:15px; margin-left:10px" AutoPostBack="true"><asp:ListItem>All</asp:ListItem></asp:DropDownList>
         <div style="padding-top:10px">
             <asp:Label runat="server" ID="scLabel" autopostback="true"></asp:Label>
         </div>
         <div style="margin-top:10px">
-            <asp:GridView runat="server" ID="groups" AlternatingRowStyle-BackColor="white" HeaderStyle-BorderWidth="2px" 
+            <asp:GridView runat="server" EnableViewState="false" ID="groups" AlternatingRowStyle-BackColor="white" HeaderStyle-BorderWidth="2px" 
                 HeaderStyle-BorderColor="black" HeaderStyle-BackColor="#feba18" AutoGenerateColumns="False" RowStyle-HorizontalAlign="Center" ForeColor="Black" CellSpacing="2">
                 <Columns>
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <button class="btn btn-default glyphicon glyphicon-plus" onclick="return toggle-details(this, 'tr<%# Eval("FirstName") %>')"/>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField>
-                        <ItemTemplate>
-                            <%# Eval("FirstName") %>
-                            <%# NewRow(Eval("FirstName")) %>
-                                <asp:GridView ID="comments" runat="server" Width="100%" AutoGenerateColumns="false"></asp:GridView>
+                            <button enableviewstate="false" runat="server" type="button" onserverclick="ShowDetails">Details</button>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

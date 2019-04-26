@@ -14,6 +14,10 @@ namespace MockupGUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            BoundField Space = new BoundField();
+            Space.HeaderText = " ";
+            Space.ItemStyle.Width = 20;
+
             using (SqlConnection con = new SqlConnection(@"Data Source=ITCapEvalVM;Initial Catalog=EvalDatabase;Integrated Security=True"))
             {
                 con.Open();
@@ -32,59 +36,46 @@ namespace MockupGUI
                     scLabel.Text = ("Scores For Peer Evaluation");
                     searchup.Text = ("Sort by Group");
 
-                    BoundField firstName = new BoundField();
-                    firstName.ItemStyle.Width = 100;
-                    firstName.DataField = "FirstName";
-                    firstName.HeaderText = "First Name";
+                    BoundField Name = new BoundField();
+                    Name.DataField = "Name";
+                    Name.HeaderText = "Name";
 
-                    BoundField lastName = new BoundField();
-                    lastName.ItemStyle.Width = 100;
-                    lastName.DataField = "LastName";
-                    lastName.HeaderText = "Last Name";
-
-                    BoundField reviewerFirstName = new BoundField();
-                    reviewerFirstName.ItemStyle.Width = 100;
-                    reviewerFirstName.DataField = "rFirstName";
-                    reviewerFirstName.HeaderText = "Reviewer First Name";
-
-                    BoundField reviewerLastName = new BoundField();
-                    reviewerLastName.ItemStyle.Width = 100;
-                    reviewerLastName.DataField = "rLastName";
-                    reviewerLastName.HeaderText = "Reviewer Last Name";
+                    BoundField reviewerName = new BoundField();
+                    reviewerName.DataField = "rName";
+                    reviewerName.HeaderText = "Reviewer Name";
 
                     BoundField contribution = new BoundField();
-                    contribution.ItemStyle.Width = 100;
                     contribution.DataField = "Contribution";
                     contribution.HeaderText = "Contribution";
 
                     BoundField communication = new BoundField();
-                    communication.ItemStyle.Width = 125;
                     communication.DataField = "Communication";
                     communication.HeaderText = "Communication";
 
                     BoundField teamwork = new BoundField();
-                    teamwork.ItemStyle.Width = 80;
                     teamwork.DataField = "Teamwork";
                     teamwork.HeaderText = "Teamwork";
 
                     BoundField general = new BoundField();
-                    general.ItemStyle.Width = 65;
                     general.DataField = "General";
                     general.HeaderText = "General";
 
                     BoundField overall = new BoundField();
-                    overall.ItemStyle.Width = 65;
                     overall.DataField = "Overall";
                     overall.HeaderText = "Overall";
 
-                    groups.Columns.Add(firstName);
-                    groups.Columns.Add(lastName);
-                    groups.Columns.Add(reviewerFirstName);
-                    groups.Columns.Add(reviewerLastName);
+                    groups.Columns.Add(Name);
+                    groups.Columns.Add(Space);
+                    groups.Columns.Add(reviewerName);
+                    groups.Columns.Add(Space);
                     groups.Columns.Add(contribution);
+                    groups.Columns.Add(Space);
                     groups.Columns.Add(communication);
+                    groups.Columns.Add(Space);
                     groups.Columns.Add(teamwork);
+                    groups.Columns.Add(Space);
                     groups.Columns.Add(general);
+                    groups.Columns.Add(Space);
                     groups.Columns.Add(overall);
                 }
 
@@ -94,53 +85,46 @@ namespace MockupGUI
                     scLabel.Text = ("Scores For Sponsor Evaluation");
                     searchup.Text = ("Sort by Group");
 
-                    BoundField firstName = new BoundField();
-                    firstName.ItemStyle.Width = 100;
-                    firstName.DataField = "FirstName";
-                    firstName.HeaderText = "Sponsor First Name";
-
-                    BoundField lastName = new BoundField();
-                    lastName.ItemStyle.Width = 100;
-                    lastName.DataField = "LastName";
-                    lastName.HeaderText = "Sponsor Last Name";
+                    BoundField Name = new BoundField();
+                    Name.DataField = "Name";
+                    Name.HeaderText = "Sponsor Name";
 
                     BoundField clarity = new BoundField();
-                    clarity.ItemStyle.Width = 100;
                     clarity.DataField = "Clarity";
                     clarity.HeaderText = "Clarity";
 
                     BoundField quality = new BoundField();
-                    quality.ItemStyle.Width = 100;
                     quality.DataField = "Quality";
                     quality.HeaderText = "Quality";
 
                     BoundField communication = new BoundField();
-                    communication.ItemStyle.Width = 125;
                     communication.DataField = "Communication";
                     communication.HeaderText = "Communication";
 
                     BoundField commitment = new BoundField();
-                    commitment.ItemStyle.Width = 100;
                     commitment.DataField = "Commitment";
                     commitment.HeaderText = "Commitment";
 
                     BoundField management = new BoundField();
-                    management.ItemStyle.Width = 100;
                     management.DataField = "Management";
                     management.HeaderText = "Management";
 
                     BoundField overall = new BoundField();
-                    overall.ItemStyle.Width = 100;
                     overall.DataField = "Overall";
                     overall.HeaderText = "Overall";
 
-                    groups.Columns.Add(firstName);
-                    groups.Columns.Add(lastName);
+                    groups.Columns.Add(Name);
+                    groups.Columns.Add(Space);
                     groups.Columns.Add(clarity);
+                    groups.Columns.Add(Space);
                     groups.Columns.Add(quality);
+                    groups.Columns.Add(Space);
                     groups.Columns.Add(communication);
+                    groups.Columns.Add(Space);
                     groups.Columns.Add(commitment);
+                    groups.Columns.Add(Space);
                     groups.Columns.Add(management);
+                    groups.Columns.Add(Space);
                     groups.Columns.Add(overall);
                 }
                     
@@ -151,64 +135,57 @@ namespace MockupGUI
                     searchup.Text = ("Sort by Group");
 
                     BoundField title = new BoundField();
-                    title.ItemStyle.Width = 100;
                     title.DataField = "Title";
                     title.HeaderText = "Title";
 
-                    BoundField firstName = new BoundField();
-                    firstName.ItemStyle.Width = 100;
-                    firstName.DataField = "FirstName";
-                    firstName.HeaderText = "First Name";
-
-                    BoundField lastName = new BoundField();
-                    lastName.ItemStyle.Width = 100;
-                    lastName.DataField = "LastName";
-                    lastName.HeaderText = "Last Name";
+                    BoundField Name = new BoundField();
+                    Name.DataField = "Name";
+                    Name.HeaderText = "Name";
 
                     BoundField role = new BoundField();
-                    role.ItemStyle.Width = 100;
                     role.DataField = "Role";
                     role.HeaderText = "Role";
 
                     BoundField poster = new BoundField();
-                    poster.ItemStyle.Width = 100;
                     poster.DataField = "Poster";
                     poster.HeaderText = "Poster";
 
                     BoundField teamtalk = new BoundField();
-                    teamtalk.ItemStyle.Width = 100;
                     teamtalk.DataField = "Teamtalk";
                     teamtalk.HeaderText = "Teamtalk";
 
                     BoundField slides = new BoundField();
-                    slides.ItemStyle.Width = 100;
                     slides.DataField = "Slides";
                     slides.HeaderText = "Slides";
 
                     BoundField deliverables = new BoundField();
-                    deliverables.ItemStyle.Width = 100;
                     deliverables.DataField = "Deliverables";
                     deliverables.HeaderText = "Deliverables";
 
                     BoundField softskills = new BoundField();
-                    softskills.ItemStyle.Width = 100;
                     softskills.DataField = "Softskills";
                     softskills.HeaderText = "Softskills";
 
                     BoundField overall = new BoundField();
-                    overall.ItemStyle.Width = 100;
                     overall.DataField = "Overall";
                     overall.HeaderText = "Overall";
 
                     groups.Columns.Add(title);
+                    groups.Columns.Add(Space);
                     groups.Columns.Add(role);
-                    groups.Columns.Add(firstName);
-                    groups.Columns.Add(lastName);
+                    groups.Columns.Add(Space);
+                    groups.Columns.Add(Name);
+                    groups.Columns.Add(Space);
                     groups.Columns.Add(poster);
+                    groups.Columns.Add(Space);
                     groups.Columns.Add(teamtalk);
+                    groups.Columns.Add(Space);
                     groups.Columns.Add(slides);
+                    groups.Columns.Add(Space);
                     groups.Columns.Add(deliverables);
+                    groups.Columns.Add(Space);
                     groups.Columns.Add(softskills);
+                    groups.Columns.Add(Space);
                     groups.Columns.Add(overall);
                 }
 
@@ -249,7 +226,7 @@ namespace MockupGUI
                 {
                     MessageBox.Show(ex.ToString());
                 }
-            } 
+            }
         }
 
         public void EvalReportSelect(object sender, EventArgs e)
@@ -261,7 +238,7 @@ namespace MockupGUI
                 scLabel.Text = ("Scores For Peer Evaluation");
             else if (form == "Presentation Evaluation")
                 scLabel.Text = ("Scores For Presentation Evaluation");
-            Page_Load(Server, e);
+            //Page_Load(Server, e);
         }
 
         public string FormQueries(string form)
@@ -271,7 +248,7 @@ namespace MockupGUI
             {
                 query =
                     @"SELECT 
-	                            a.FirstName, a.LastName, b.FirstName as rFirstName, b.LastName as rLastName, Contribution, Communication, Teamwork, General, Overall
+	                            a.FirstName+ ' ' +a.LastName as Name, b.FirstName+ ' ' +b.LastName as rName, Contribution, Communication, Teamwork, General, Overall
 		                            From 
 	                            Peer_Review
 		                            INNER JOIN 
@@ -287,7 +264,7 @@ namespace MockupGUI
             {
                 query =
                     @"SELECT 
-	                            a.FirstName, a.LastName, b.FirstName as rFirstName, b.LastName as rLastName, Contribution, Communication, Teamwork, General, Overall
+	                            a.FirstName+ ' ' +a.LastName as Name, b.FirstName+ ' ' +b.LastName as rName, Contribution, Communication, Teamwork, General, Overall
 		                            From 
 	                            Peer_Review
 		                            INNER JOIN 
@@ -313,7 +290,7 @@ namespace MockupGUI
             {
                 query =
                     @"SELECT 
-	                    Project.Title, FirstName, LastName, Role, Poster, Teamtalk, Slides, Deliverables, Softskills, Overall
+	                    Project.Title, FirstName+ ' ' +LastName as Name, Role, Poster, Teamtalk, Slides, Deliverables, Softskills, Overall
 		                    From 
 	                    Presentation_Eval
 		                    INNER JOIN
@@ -329,7 +306,7 @@ namespace MockupGUI
             {
                 query =
                     @"SELECT 
-	                    Project.Title, FirstName, LastName, Role, Poster, Teamtalk, Slides, Deliverables, Softskills, Overall
+	                    Project.Title, FirstName+ ' ' +LastName as Name, Role, Poster, Teamtalk, Slides, Deliverables, Softskills, Overall
 		                    From 
 	                    Presentation_Eval
 		                    INNER JOIN
@@ -347,7 +324,7 @@ namespace MockupGUI
             {
                 query =
                     @"SELECT
-		                Project_Sponsor.FirstName, Project_Sponsor.LastName, Clarity, Quality, Communication, Commitment, Management, Overall
+		               Project_Sponsor.FirstName+ ' ' +Project_Sponsor.LastName as Name, Clarity, Quality, Communication, Commitment, Management, Overall
 	                        FROM
 		                Sponsor_Eval
 	                        INNER JOIN
@@ -359,7 +336,7 @@ namespace MockupGUI
             {
                 query =
                     @"SELECT
-		                Project_Sponsor.FirstName, Project_Sponsor.LastName, Clarity, Quality, Communication, Commitment, Management, Overall
+		                Project_Sponsor.FirstName+ ' ' +Project_Sponsor.LastName as Name, Clarity, Quality, Communication, Commitment, Management, Overall
 	                        FROM
 		                Sponsor_Eval
 	                        INNER JOIN
@@ -372,5 +349,14 @@ namespace MockupGUI
             return query;
         }
 
+        protected void ShowDetails(object sender, EventArgs e)
+        {
+            System.Web.UI.HtmlControls.HtmlButton btn = (System.Web.UI.HtmlControls.HtmlButton)sender;
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+            string firstCellValue = gvr.Cells[1].Text;
+            Session["FormType"] = FormSelect.SelectedItem.Text;
+            Session["FirstCellVal"] = firstCellValue;
+            Response.Redirect("DetailsPage.aspx");
+        }
     }
 }
