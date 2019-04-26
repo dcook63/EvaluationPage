@@ -174,8 +174,10 @@ namespace MockupGUI
 	                        Presentation_Eval.Project_ID = Project_Assignment.Project_ID
 		                        INNER JOIN
 	                        Project
-		                        ON
-	                        Project.Title = '" + FirstCellVal + "'";
+		                         ON
+	                        Project_Assignment.Project_ID = Project.Project_ID
+								WHERE
+							Project.Title = '" + FirstCellVal + "'";
                 }
 
                 if (formType == "Sponsor Evaluation")
